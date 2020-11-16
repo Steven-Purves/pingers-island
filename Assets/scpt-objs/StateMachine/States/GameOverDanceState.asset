@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723618d2be837ab4f818fa25052fc11a, type: 3}
+  m_Name: GameOverDanceState
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: d42f6fc8accf91f4e9edf03cf2a02ab4, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 5dfe9a3da7fb60f4c83541378b97614c, type: 2}
+    trueState: {fileID: 11400000, guid: de085cdfcabf051449421b8e8cf22652, type: 2}
+    falseState: {fileID: 11400000, guid: 43af4ef9966de3f49885d78222484a00, type: 2}

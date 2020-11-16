@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57020c58d33734e48b3f92a17185c9a4, type: 3}
+  m_Name: boner-green-data
+  m_EditorClassIdentifier: 
+  enemyType: 1
+  startingHealth: 2
+  speed: 5
+  pointsOnKill: 200
+  material: {fileID: 2100000, guid: 7a5b171db62a57c44988a63a63ad5c26, type: 2}
+  runtimeAnimatorController: {fileID: 9100000, guid: 81e2dcba0c81c7543959dab74901596c,
+    type: 2}
+  throwingWeapon: {fileID: 1950195974970125510, guid: 91078ff825047b5458eed15eccfb2790,
+    type: 3}
+  trailColour: {r: 0.64836097, g: 0.4009434, b: 1, a: 0.5019608}
+  explosionBones:
+  - {fileID: 5390953588697410755, guid: bbcb5d5896b36634f946b153e87cdb9b, type: 3}
+  - {fileID: 5214830953579285765, guid: 10beb2b142651d847a4386f88393db61, type: 3}
+  - {fileID: 3159106537466173433, guid: 12ecff37bb905d543ac31c41eff6afe0, type: 3}
+  - {fileID: 7955869193099349983, guid: cce0f785baf46e04dbb3197a21744c8e, type: 3}
+  - {fileID: 3110035958558872074, guid: 8e43927d28f028c4984e0341bd070c9c, type: 3}
+  - {fileID: 5260061138175577077, guid: b2438b5844371f0428a79d167b9d9386, type: 3}
+  deathExplosion: {fileID: 8464584302062584799, guid: 90b2242861bf84c41a3fd10a2897880e,
+    type: 3}

@@ -1,0 +1,19 @@
+score tween scales up on points
+
+fix floor shadows on castle
+
+
+sound fx pop balloon,  guns 
+
+pick up guns
+
+music
+
+
+
+no skybox just clouds
+
+
+C# Type Conversion Operators  public static explicit operator
+
+look into the fade on car engine
