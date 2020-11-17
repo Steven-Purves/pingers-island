@@ -17,27 +17,13 @@ public class Shell : PoolObject
 	{
 		rb = GetComponent<Rigidbody>();
 	}
-	void Start()
-	{
-		
-		float force = Random.Range(forceMin, forceMax);
 
-
-        rb.AddTorque(Random.insideUnitSphere * force);
-        rb.AddForce(transform.right * force);
-
-		// StartCoroutine(FadeOut()); you will need to sort this out later
-		
-	}
 	public override void OnObjReuse()
 	{
-
 		float force = Random.Range(forceMin, forceMax);
-
 
 		rb.AddTorque(Random.insideUnitSphere * force);
 		rb.AddForce(transform.right * force);
-
 	}
 
 	IEnumerator FadeOut()

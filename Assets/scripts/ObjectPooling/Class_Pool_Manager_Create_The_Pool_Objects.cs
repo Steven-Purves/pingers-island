@@ -9,7 +9,7 @@ public class Class_Pool_Manager_Create_The_Pool_Objects : MonoBehaviour
     public GameObject crateBits;
     public int bonerAmount;
 
-    public GameObject[] particles, whiteBones, greenBones, blueBones, redBones, bullets, pickups;
+    public GameObject[] particles, whiteBones, greenBones, blueBones, redBones, bullets, pickups, droppedGuns;
     public static Class_Pool_Manager_Create_The_Pool_Objects Instance;
 
     void Awake()
@@ -49,6 +49,11 @@ public class Class_Pool_Manager_Create_The_Pool_Objects : MonoBehaviour
         }
 
         foreach (GameObject gameObject in pickups)
+        {
+            PoolManager.Instance.CreatePool(gameObject, 2);
+        }
+
+        foreach (GameObject gameObject in droppedGuns)
         {
             PoolManager.Instance.CreatePool(gameObject, 2);
         }

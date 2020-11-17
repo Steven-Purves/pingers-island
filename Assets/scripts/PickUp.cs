@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PickUp : PoolObject
 {
     public enum PickUpType { CHICKEN_LEG, UZI, SHOT_GUN, TOMMY_GUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN, SHIELD }
@@ -52,7 +53,7 @@ public class PickUp : PoolObject
                 case PickUpType.GRENADE_LAUNCHER:
                 case PickUpType.BAZOOKA:
                 case PickUpType.SPACE_GUN:
-                    player.EquipGun(player.Guns[(int)type]);
+                    player.EquipGun((int)type);
                     break;
                 default:
                     break;

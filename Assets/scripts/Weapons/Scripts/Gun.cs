@@ -61,7 +61,7 @@ public class Gun : MonoBehaviour
 
             if (shotsLeft == 0 && !infiniteAmmo)
             {
-                gunController.EquipGun(gunController.Guns[0]);
+                gunController.EquipGun((int)GunController.GunType.REVOLVER);
                 return;
             }
 

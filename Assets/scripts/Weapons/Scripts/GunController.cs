@@ -9,26 +9,32 @@ public class GunController : MonoBehaviour
 	public Transform weaponHold;
     
 	public Gun[] Guns;
-	Gun equippedGun;
+	public GameObject[] droppedGuns;
+	private Gun equippedGun;
+
+	public enum GunType { REVOLVER, UZI, SHOTGUN, TOMMYGUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN }
+	private GunType equippedGunType = GunType.REVOLVER;
 
 	void Start()
 	{
 		if (Guns != null)
 		{
-			EquipGun(Guns[0]);
+			EquipGun((int)GunType.REVOLVER);
 		}
 	}
 
-	public void EquipGun(Gun gunToEquip)
+	public void EquipGun(int gunToEquip)
 	{
 		if (equippedGun != null)
 		{
+			DropGun();
 			Destroy(equippedGun.gameObject);
 		}
 
-		equippedGun = Instantiate(gunToEquip, weaponHold.position, weaponHold.rotation);
+		equippedGun = Instantiate(Guns[gunToEquip], weaponHold.position, weaponHold.rotation);
 		equippedGun.transform.parent = weaponHold;
 		equippedGun.Init(this);
+		equippedGunType = (GunType)gunToEquip;
 	}
 
 	public void OnTriggerHold()
@@ -54,4 +60,12 @@ public class GunController : MonoBehaviour
 			equippedGun.Aim (point);
 		}
 	}
+
+	private void DropGun()
+    {
+        if (equippedGunType != GunType.REVOLVER)
+        {
+			PoolManager.Instance.ReuseObject(droppedGuns[(int)equippedGunType-1], weaponHold.position, Quaternion.identity);
+		}
+    }
 }
