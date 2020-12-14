@@ -5,27 +5,35 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-
-    GunController gunController;
-    Vector3 moveDirection;
+    private GunController gunController;
+    private Vector3 moveDirection;
+    private Vector3 moveInput;
+    private bool isDisabled;
 
     public Vector3 MoveInput => moveDirection; 
+
     void Start()
     {
         gunController = GetComponent<GunController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         MouseInput();
-        KeyBoardInPut();
-      
+        KeyBoardInput();
     }
 
-    private void KeyBoardInPut()
+    private void KeyBoardInput()
     {
-        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (isDisabled)
+        {
+            moveInput = Vector3.zero;
+        }
+        else
+        {
+            moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        }
+
         moveDirection = moveInput.normalized;
     }
 

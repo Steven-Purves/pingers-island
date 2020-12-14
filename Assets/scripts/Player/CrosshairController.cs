@@ -11,9 +11,11 @@ public class CrosshairController : MonoBehaviour
     [SerializeField] Camera viewCamera;
     [SerializeField] Color highLight;
     [SerializeField] Color original;
-    SpriteRenderer dot;
-    Vector3 point;
-    Ray ray;
+    private SpriteRenderer dot;
+    private Vector3 point;
+    private Ray ray;
+
+    private PlayerController playerController;
 
     public static CrosshairController Instance;
 
@@ -23,15 +25,19 @@ public class CrosshairController : MonoBehaviour
         gunController = GetComponent<GunController>();
         Cursor.visible = false;
         dot = crosshairs.GetComponentInChildren<SpriteRenderer>();
+        playerController = GetComponent<PlayerController>();
     }
+
     void Update()
     {
-       
         ray = viewCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.up * gunController.weaponHold.position.y);
 
         if ((new Vector2(point.x, point.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 4)
+        {
             gunController.Aim(point);
+            
+        }
      
         if (groundPlane.Raycast(ray, out float rayDistance))
             point = ray.GetPoint(rayDistance);
@@ -43,5 +49,7 @@ public class CrosshairController : MonoBehaviour
 
         crosshairs.Rotate(Vector3.up * 60 * Time.deltaTime);
         crosshairs.position = point + Vector3.up * 0.3f;
+
+        playerController.LookAt(point);
     }
 }

@@ -14,7 +14,7 @@ public class Script_Water_Create_Splash : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        IDamageable damageable = c.GetComponent<Collider>().GetComponent<IDamageable>();
+        IDamageable damageable = c.GetComponent<IDamageable>();
 
         Vector3 position = new Vector3(c.transform.position.x, transform.position.y, c.transform.position.z);
 

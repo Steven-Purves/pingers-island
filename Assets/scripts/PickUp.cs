@@ -42,10 +42,11 @@ public class PickUp : PoolObject
             switch (type)
             {
                 case PickUpType.CHICKEN_LEG:
-                    print("yum!");
+                   
                     break;
                 case PickUpType.SHIELD:
-                    print("shields up!");
+                 
+                    other.GetComponentInChildren<Force_Field>().ShieldsUp();
                     break;
                 case PickUpType.UZI:
                 case PickUpType.SHOT_GUN:

@@ -66,7 +66,7 @@ public class Projectile : PoolObject {
 
 	public virtual void OnHitObject (Collider c, Vector3 hitPoint)
 	{
-		IDamageable damagableObject = c.GetComponent<Collider>().GetComponent<IDamageable> ();
+		IDamageable damagableObject = c.GetComponent<IDamageable>();
 
 		
 		if (damagableObject != null) {

@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-[RequireComponent(typeof(PlayerController))]
-[RequireComponent(typeof(GunController))]
 
 public class Player : Living
 { 
-    public bool hitable;
+    public bool isVulnerable;
     public static event Action OnPlayerDied = delegate { };
     protected override void Start()
     {
@@ -16,7 +14,7 @@ public class Player : Living
     }
     public override void TakeDamage(int damage, bool notUsed)
     {
-        if (hitable)
+        if (isVulnerable)
         {
             base.TakeDamage(damage);
         }

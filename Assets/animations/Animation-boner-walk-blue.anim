@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Animation-boner-walk-blue
+  m_Name: animation-boner-walk-blue
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
