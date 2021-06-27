@@ -7,6 +7,7 @@ public class Force_Field : MonoBehaviour
 {
     public Player player;
     public SphereCollider sphereCollider;
+
     // Start is called before the first frame update
     void Start()
     {

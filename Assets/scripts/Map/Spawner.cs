@@ -34,6 +34,11 @@ public class Spawner : TrackPlayer
 
     void Update()
     {
+        if (GamePeriod.isGameOver)
+        {
+            return;
+        }
+
         if (Time.time > nextCampCheckTime)
         {
             nextCampCheckTime = Time.time + timeBetweenCampingChecks;
@@ -69,8 +74,9 @@ public class Spawner : TrackPlayer
             yield return null;
         }
 
-          PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f)) ;
+        PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f)) ;
     }
+
     private void SpawnCrate()
     { 
         Crate_Move crate_Move = Instantiate(crate);

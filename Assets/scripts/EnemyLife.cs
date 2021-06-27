@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyLife : Living
 {
     public Enemy_Components enemy_Components;
+    public float forceBlowBack = 100;
  
     public static event Action<int> OnEnemyDeath;
    
@@ -18,7 +19,7 @@ public class EnemyLife : Living
         dead = false;
     }
 
-    protected override void Start() { }
+    protected override void Start() {  }
     public override void TakeHit(int damage, Vector3 _hitPoint, Vector3 _hitDirection)
     {
         PoolManager.Instance.ReuseObject(enemy_Components.hitBonerParticle, _hitPoint, Quaternion.identity);
@@ -43,6 +44,6 @@ public class EnemyLife : Living
         CinemachineShake.Instance.ShakeCamera(2f, .3f);
 
         OnEnemyDeath?.Invoke(pointsOnDeath);
-        enemy_Components.enermy_State_Methods.BlowUp(lastHitPoint, lastHitDirection, 150f, 20f);
+        enemy_Components.enermy_State_Methods.BlowUp(lastHitPoint, lastHitDirection, forceBlowBack, 20f);
     }
 }

@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 2
-  infiniteAmmo: 1
+  infiniteAmmo: 0
   msBetweenShots: 100
   burstCount: 3
-  shotsLeft: 0
+  shotsLeft: 5
 --- !u!114 &461769950292917854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   bullet: {fileID: 1582356418521026, guid: ca6c71e6fcbcce44b8ec839e90428f1c, type: 3}
   shootAudio: {fileID: 0}
   reloadAudio: {fileID: 0}
+  offset: 0
   lazerBeam: {fileID: 6682028875645907395, guid: 6105540da615ebd458e207b3e26b866a,
     type: 3}
 --- !u!114 &2132035813182550718

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Missile_Projectile : Projectile
 {
+    public int blastDamage; 
+
     public override void OnHitObject(Collider c, Vector3 hitPoint)
     {
         IDamageable damagableObject = c.GetComponent<Collider>().GetComponent<IDamageable>();
@@ -35,7 +37,9 @@ public class Missile_Projectile : Projectile
                 }
                 else
                 {
-                    collider.gameObject.GetComponent<Living>().TakeDamage(10, true);
+                    Living livingBeing = collider.gameObject.GetComponent<Living>();
+
+                    livingBeing.TakeDamage(distanceCheck(livingBeing.transform.position), true);
                 }
             }
 
@@ -46,5 +50,9 @@ public class Missile_Projectile : Projectile
                 enemy_Reuse_Bone_Parts.myRigidbody.AddExplosionForce(200, transform.position, 4);
             }
         }
+    }
+    private int distanceCheck(Vector3 colliderPosition)
+    {
+        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
     }
 }

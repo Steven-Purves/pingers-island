@@ -126,7 +126,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
                 }
                 else
                 {
-                    collider.gameObject.GetComponent<Living>().TakeDamage(10, true);
+                    collider.gameObject.GetComponent<Living>().TakeDamage(5, true);
                 }
             }
         }

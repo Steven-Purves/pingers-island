@@ -14,18 +14,20 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private PlayerAnimations playerAnimations;
 
+    private bool isLooking = true;
+
     void Start()  
     {
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimations = GetComponent<PlayerAnimations>();
+
+        Player.OnPlayerDied += () => isLooking = false; 
     }
 
     void Update() 
     {
         velocity = playerInput.MoveInput * moveSpeed;
-
-        print($"{jimmyPingersModel.forward} , {jimmyPingersModel.TransformVector(Vector3.zero)}");
 
         playerAnimations.AnimateWalk(Vector3.Dot(jimmyPingersModel.forward, velocity), Vector3.Dot(jimmyPingersModel.right, velocity));
     }
@@ -34,7 +36,10 @@ public class PlayerController : MonoBehaviour
 
     public void LookAt(Vector3 lookPoint)
     {
-        Vector3 height = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
-        jimmyPingersModel.LookAt(height);
+        if (isLooking)
+        {
+            Vector3 height = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
+            jimmyPingersModel.LookAt(height);
+        }
     }
 }

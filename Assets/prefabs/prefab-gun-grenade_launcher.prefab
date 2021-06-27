@@ -131,7 +131,7 @@ MonoBehaviour:
   infiniteAmmo: 0
   msBetweenShots: 300
   burstCount: 3
-  shotsLeft: 3
+  shotsLeft: 5
 --- !u!114 &6472806737133726627
 MonoBehaviour:
   m_ObjectHideFlags: 0

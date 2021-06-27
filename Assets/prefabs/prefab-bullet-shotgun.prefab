@@ -57,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &114194409979883892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +99,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 1536
-  impact: {fileID: 994430577590641487, guid: 8ef3d7217dd29524198fc80d57810bb2, type: 3}
+  impact: {fileID: 5104486197619220598, guid: 241985bcca277f544b67b854e8d38bdb, type: 3}
 --- !u!96 &96026010800197926
 TrailRenderer:
   serializedVersion: 2
@@ -114,6 +116,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:

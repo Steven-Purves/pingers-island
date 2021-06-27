@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: boner-white-data
   m_EditorClassIdentifier: 
   enemyType: 0
-  startingHealth: 2
+  startingHealth: 3
   speed: 3
   pointsOnKill: 100
   material: {fileID: 2100000, guid: 4353482a8725df64bbda26923a260079, type: 2}

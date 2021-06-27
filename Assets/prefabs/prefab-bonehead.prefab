@@ -60,6 +60,7 @@ MonoBehaviour:
   isPlayer: 0
   startingHealth: 2
   enemy_Components: {fileID: 7206966453178048119}
+  forceBlowBack: 40
 --- !u!1 &4175565046162128336
 GameObject:
   m_ObjectHideFlags: 0

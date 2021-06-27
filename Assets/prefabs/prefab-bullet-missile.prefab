@@ -207,3 +207,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   impact: {fileID: 1942621340449072677, guid: 6caa1849f9763a043906db41a9972a58, type: 3}
+  damage: 3
+  blastDamage: 2

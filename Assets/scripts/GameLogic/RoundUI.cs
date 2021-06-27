@@ -14,20 +14,19 @@ public class RoundUI : MonoBehaviour
 
     LevelLoaderGame levelLoader;
     MyData data;
-    //bool inputBlocked;
+   
 
     void Start()
     {
         levelLoader = GetComponent<LevelLoaderGame>();
     }
+
     void Update()
     {
-       // if (!inputBlocked)
-        //{
             GameOver();
             EnterHighScore();
-    //    }
     }
+
     private void GameOver()
     {
         if (gameOverUI.activeInHierarchy)
@@ -63,6 +62,7 @@ public class RoundUI : MonoBehaviour
             }
         }
     }
+
     private void FinishCurrentGame()
     {
         data.ReachedHighScore = false;
@@ -71,6 +71,7 @@ public class RoundUI : MonoBehaviour
 
         levelLoader.LoadALevel(2);
     }
+
     public void SetGameObjectUI(MyData _data)
     {
         data = _data;

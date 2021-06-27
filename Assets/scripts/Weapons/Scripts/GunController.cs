@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class GunController : MonoBehaviour
 {
 	public Transform weaponHold;
-    
 	public Gun[] Guns;
 	public GameObject[] droppedGuns;
-	private Gun equippedGun;
 
+	private Gun equippedGun;
+	
 	public enum GunType { REVOLVER, UZI, SHOTGUN, TOMMYGUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN }
-	private GunType equippedGunType = GunType.REVOLVER;
+	public GunType equippedGunType = GunType.REVOLVER;
+
+	public static Action<GunType> OnGunSwap;
 
 	void Start()
 	{
@@ -35,6 +38,8 @@ public class GunController : MonoBehaviour
 		equippedGun.transform.parent = weaponHold;
 		equippedGun.Init(this);
 		equippedGunType = (GunType)gunToEquip;
+
+		OnGunSwap?.Invoke(equippedGunType);
 	}
 
 	public void OnTriggerHold()

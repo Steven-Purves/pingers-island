@@ -8,7 +8,7 @@ public class Projectile : PoolObject {
 	public LayerMask hitMask;
 	public GameObject impact;
 
-    readonly protected int damage = 110;
+    public int damage = 1;
 
 	TrailRenderer trail;
 

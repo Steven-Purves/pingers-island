@@ -7,6 +7,8 @@ public class GamePeriod : MonoBehaviour
     LevelLoaderGame levelLoaderGame;
     RoundUI roundUI;
 
+    public static bool isGameOver;
+
     public MyData data;  
     void Awake()
     {
@@ -30,6 +32,7 @@ public class GamePeriod : MonoBehaviour
     }
     private void GameOver()
     {
+        isGameOver = true;
         roundUI.SetGameObjectUI(data);
     }
 

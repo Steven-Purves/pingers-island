@@ -4,7 +4,7 @@ public class Living : MonoBehaviour, IDamageable
 {
     [HideInInspector] public bool isPlayer;
     public int startingHealth;
-    protected int health;
+    [SerializeField] protected int health;
     protected bool dead;
 
     protected virtual void Start()

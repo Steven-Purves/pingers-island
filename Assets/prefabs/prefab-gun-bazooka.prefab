@@ -73,7 +73,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7173213834118390395}
-  m_Mesh: {fileID: 2276076535127784704, guid: 0c957cda188208a45bb8d4eda746528d, type: 3}
+  m_Mesh: {fileID: 2276076535127784704, guid: 0fe7ad908aa821e478092809fb12d224, type: 3}
 --- !u!23 &8912775354991072935
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 2
-  infiniteAmmo: 1
+  infiniteAmmo: 0
   msBetweenShots: 300
   burstCount: 3
-  shotsLeft: 0
+  shotsLeft: 5
 --- !u!114 &2743588749591426833
 MonoBehaviour:
   m_ObjectHideFlags: 0

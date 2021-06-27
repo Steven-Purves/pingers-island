@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4554220384353660607}
   - component: {fileID: 1789934589262617205}
   m_Layer: 0
-  m_Name: fbx-castle.tile-cracked
+  m_Name: prefab-castle.tile-cracked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,10 +55,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e45ac66f515ed6c4fa4f3e70b9b461b6, type: 2}
+  - {fileID: 2100000, guid: 40ddd7154dd260a48be6d4174641c4f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

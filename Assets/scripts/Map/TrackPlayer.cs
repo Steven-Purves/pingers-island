@@ -9,5 +9,7 @@ public abstract class TrackPlayer : MonoBehaviour
     void Awake()
     {
         playerT = FindObjectOfType<Player>().transform;
+
+        print(playerT.ToString());
     }
 }

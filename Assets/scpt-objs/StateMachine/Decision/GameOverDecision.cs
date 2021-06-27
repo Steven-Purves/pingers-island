@@ -7,7 +7,7 @@ public class GameOverDecision : Decision
 {
     public override bool Decide(EnemyStateController controller)
     {
-        return false;
+        return GamePeriod.isGameOver;
     }
 
     public override void StartDecision(EnemyStateController controller)

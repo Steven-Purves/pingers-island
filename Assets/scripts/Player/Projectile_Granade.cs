@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile_Granade : PoolObject
 {
+    public int blastDamage;
+
     private Rigidbody myRigidbody;
     private TrailRenderer trail;
     public void Awake()
@@ -31,7 +33,15 @@ public class Projectile_Granade : PoolObject
 
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
         Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
-        return velocityXZ + velocityY;
+
+        Vector3 value = velocityXZ + velocityY;
+
+        if (float.IsNaN(value.x))
+        {
+            return Vector3.zero;
+        }
+
+        return value;
     }
 
     private void BlowUp()
@@ -51,7 +61,10 @@ public class Projectile_Granade : PoolObject
                 }
                 else
                 {
-                    collider.gameObject.GetComponent<Living>().TakeDamage(10, true);
+                    Living livingBeing = collider.gameObject.GetComponent<Living>();
+
+                    livingBeing.TakeDamage(distanceCheck(livingBeing.transform.position), true);
+
                 }
             }
 
@@ -62,8 +75,13 @@ public class Projectile_Granade : PoolObject
                 enemy_Reuse_Bone_Parts.myRigidbody.AddExplosionForce(700, transform.position, 4);
             }
         }
-        
+
         gameObject.SetActive(false);
+    }
+
+    private int distanceCheck(Vector3 colliderPosition)
+    {
+        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
     }
 
     private void OnDisable()

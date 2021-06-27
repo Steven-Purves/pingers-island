@@ -42,7 +42,7 @@ public class PickUp : PoolObject
             switch (type)
             {
                 case PickUpType.CHICKEN_LEG:
-                   
+                    other.GetComponent<Player>().EatChicken();
                     break;
                 case PickUpType.SHIELD:
                  

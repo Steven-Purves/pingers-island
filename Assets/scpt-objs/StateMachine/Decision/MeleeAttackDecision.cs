@@ -38,6 +38,7 @@ public class MeleeAttackDecision : Decision
 
     private bool IsCloseToPlayer(EnemyStateController controller)
     {
+
         float sqrDistanceToPlayer = (controller.playerTransform.position - controller.transform.position).sqrMagnitude;
 
         if (sqrDistanceToPlayer < Mathf.Pow(3f, 2))

@@ -17,11 +17,12 @@ MonoBehaviour:
   weatherType: []
   groundTypes:
   - {fileID: 276932304465656736, guid: e8a321f319dd660488dfe2d9ac26116c, type: 3}
-  - {fileID: 1415064688171736065, guid: 1b8b9c37342b8fc40a02d260acbb1e51, type: 3}
-  - {fileID: 5246429563453587631, guid: 30dcb9fbe9aebf04fb899ef3c7995912, type: 3}
+  - {fileID: 9182730779139725301, guid: 81566967c277fb04db06e91d4351446f, type: 3}
+  - {fileID: 3849379372341374414, guid: 30dcb9fbe9aebf04fb899ef3c7995912, type: 3}
   - {fileID: 4876572144516310889, guid: bb8a75fd80254e1489de9b69468238b2, type: 3}
-  - {fileID: 6106055976547484975, guid: cce11c176d922fd47a48882951565222, type: 3}
-  - {fileID: 4389923038863490104, guid: d7a0da4e9f0bd4f4cb602f9addf7870d, type: 3}
+  - {fileID: 3634852374790332998, guid: 9abab0954f70f184d83d0093c2acbdd8, type: 3}
+  - {fileID: 1766783263741240120, guid: 0c14f39d9be8e804cb76bfb76bb0dfcc, type: 3}
+  - {fileID: 1803294274753830665, guid: 873bea1b68158d94aa47bd4431f60f09, type: 3}
   obsticles:
   - {fileID: 1378363431306386626, guid: 81a6e558033004db9a0e6b6c875b38ea, type: 3}
   obsticlesWithLayers:

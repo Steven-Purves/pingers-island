@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
-  infiniteAmmo: 1
+  infiniteAmmo: 0
   msBetweenShots: 100
   burstCount: 5
-  shotsLeft: 100
+  shotsLeft: 30
 --- !u!114 &2350663876039477643
 MonoBehaviour:
   m_ObjectHideFlags: 0

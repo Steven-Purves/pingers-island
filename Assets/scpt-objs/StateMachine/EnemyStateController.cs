@@ -12,9 +12,16 @@ public class EnemyStateController : TrackPlayer
     public State currentState;
     public State remainState;
 
+    public bool isGameOver;
+
     [HideInInspector] public int speed = Animator.StringToHash("Speed");
 
-    void Start() => enemy_Components = GetComponent<Enemy_Components>();
+   
+    void Start()
+    {
+        enemy_Components = GetComponent<Enemy_Components>();
+        Player.OnPlayerDied += () => { isGameOver = true; };
+    }
     void Update() => currentState.UpdateState(this);
 
     public void TransitionToState(State nextState)
