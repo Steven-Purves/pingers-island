@@ -13,24 +13,21 @@ public class Level_Camera : MonoBehaviour
     private void Awake()
     {
         vStartCam.gameObject.transform.position = new Vector3(Random.Range(-100, 100), Random.Range(0, 10), Random.Range(-100, 100));
+        Player.OnPlayerDied += PlayerDied;
     }
 
     private void Start()
     {
-
         vGameCam.gameObject.SetActive(true);
         vStartCam.gameObject.SetActive(false);
         vDeadCam.gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void PlayerDied()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            vGameCam.gameObject.SetActive(false);
-            vDeadCam.gameObject.SetActive(true);
+        vGameCam.gameObject.SetActive(false);
+        vDeadCam.gameObject.SetActive(true);
 
-            spinner.SetActive(true);
-        }
+        spinner.SetActive(true);
     }
 }

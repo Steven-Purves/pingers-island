@@ -24,11 +24,21 @@ public class Crate_Move : MonoBehaviour
 
     bool isGrounded;
     bool isBalloonPopped;
+    bool gameOver;
 
-    private void Start() { Init(); }
-    
+    private void Start()
+    {
+        Player.OnPlayerDied += GameEnded;
+        Init();
+    }
+
     public void Init()
     {
+        if(gameOver)
+        {
+            return;
+        }
+
         balloon.ResetBalloon();
         Vector3 randomTile = mapGen.GetRandomOpenTile().position;
 
@@ -45,6 +55,12 @@ public class Crate_Move : MonoBehaviour
 
         isBalloonPopped = false;
     }
+
+    private void GameEnded()
+    {
+        gameOver = true;
+    }
+
     private void Update()
     {
         Movement();

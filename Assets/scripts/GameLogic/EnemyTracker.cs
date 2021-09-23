@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyTracker : MonoBehaviour
 {
     int enemiesLeft;
-    GameScore gameScore;
+    ScoreTracker gameScore;
     GamePeriod gamePeriod;
 
     void Start()
     {
         //EnemyLife.OnEnemyDeath += EnemyDeath;
         enemiesLeft = GetComponent<Spawner>().NumberOfEnemies;
-        gameScore = GetComponent<GameScore>();
+        gameScore = GetComponent<ScoreTracker>();
         gamePeriod = GetComponent<GamePeriod>();
     }
     public void StopTracking()

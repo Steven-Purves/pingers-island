@@ -26,6 +26,14 @@ public class CrosshairController : MonoBehaviour
         Cursor.visible = false;
         dot = crosshairs.GetComponentInChildren<SpriteRenderer>();
         playerController = GetComponent<PlayerController>();
+
+        Player.OnPlayerDied += PlayerDied;
+    }
+
+    private void PlayerDied()
+    {
+        Cursor.visible = true;
+        crosshairs.gameObject.SetActive(false);
     }
 
     void Update()

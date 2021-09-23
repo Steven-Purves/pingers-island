@@ -19,6 +19,8 @@ public class Spawn_Pickup : MonoBehaviour
 
     private void Start()
     {
+        print("remeber to set level for pick ups!");
+
         if(level >= 20)
         {
             pickup_Tier = Pickup_Tier.FORTH;

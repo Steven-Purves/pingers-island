@@ -3,20 +3,10 @@ using UnityEngine;
 
 public class SlowDown : MonoBehaviour
 {
-
 	public float slowdownFactor = 0.5f;
-
 	public float slowdownLength = 2f;
-
-
-
-	public void Start()
-	{
-		//FindObjectOfType<Spawner>().OnPlayerWin += SlowdownTime;
-
-	}
-    
-	void SlowdownTime()
+   
+	public void SlowdownTime()
 	{
 		StartCoroutine(ScaleTime(0.2f, 1f,1));
 
@@ -39,8 +29,6 @@ public class SlowDown : MonoBehaviour
 
 		while (timer < time)
 		{
-			
-		
 			Time.timeScale = Mathf.Lerp(start, end, timer / time);
 		
             Time.fixedDeltaTime = 0.02F * Time.timeScale;

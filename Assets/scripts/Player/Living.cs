@@ -35,4 +35,9 @@ public class Living : MonoBehaviour, IDamageable
     {
         dead = true;
     }
+
+    public virtual void Splash()
+    {
+        
+    }
 }

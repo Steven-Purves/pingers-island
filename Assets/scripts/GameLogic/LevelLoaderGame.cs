@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class LevelLoaderGame : MonoBehaviour
 {
-    EnemyTracker enemyTracker;
-    public void Start()
-    {
-        enemyTracker = GetComponent<EnemyTracker>();
-    }
+    public EnemyTracker enemyTracker;
+
     public void LoadALevel(int levelToLoad)
     {
         enemyTracker.StopTracking();

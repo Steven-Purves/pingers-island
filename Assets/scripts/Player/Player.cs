@@ -4,11 +4,13 @@ using UnityEngine;
 using System;
 
 public class Player : Living
-{ 
-    public Player_Particles player_Particles;
-    public bool isVulnerable;
+{
     public static event Action OnPlayerDied;
     public static event Action OnPlayerHit;
+
+    public SkinnedMeshRenderer SkinnedMeshRenderer;
+    public Player_Particles player_Particles;
+    public bool isVulnerable;
 
     protected override void Start()
     {
@@ -16,6 +18,7 @@ public class Player : Living
         base.Start();
         isPlayer = true;
     }
+
     public override void TakeDamage(int damage, bool notUsed)
     {
         if (isVulnerable)
@@ -26,6 +29,7 @@ public class Player : Living
             Invoke(nameof(IsVurnerableSwitch),1);
         }
     }
+
     private bool IsVurnerableSwitch() => isVulnerable = true;
 
     public override void Die(bool notUsed)
@@ -40,4 +44,13 @@ public class Player : Living
         base.TakeDamage(-1);
     }
 
+    public override void Splash()
+    {
+        Invoke(nameof(Disappear), 0.5f);
+    }
+
+    private void Disappear()
+    {
+        SkinnedMeshRenderer.enabled = false;
+    }
 }

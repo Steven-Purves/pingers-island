@@ -22,6 +22,8 @@ public class Script_Water_Create_Splash : MonoBehaviour
         {
             damageable.TakeHit(100, true);
             Instantiate(bigSplash, position, Quaternion.identity);
+
+            damageable.Splash();
         }
         else
         {
