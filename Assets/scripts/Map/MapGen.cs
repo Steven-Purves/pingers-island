@@ -44,7 +44,7 @@ public class MapGen : MonoBehaviour
         CreateObstacles();
         surface.BuildNavMesh();
         SpawnFlowers();
-        spawnWeather();
+        SpawnWeather();
     }
 
     private void SpawnFlowers()
@@ -60,7 +60,7 @@ public class MapGen : MonoBehaviour
         }
     }
 
-    public void spawnWeather()
+    public void SpawnWeather()
     {
         foreach (Transform child in weatherSpawnPoint.transform)
         {
@@ -125,7 +125,7 @@ public class MapGen : MonoBehaviour
             }
         }
        
-        Instantiate(levelToBuild[levelTypeIndex].waterType, new Vector3(0, -2.5f, 0), Quaternion.identity,mapholder);
+        Instantiate(levelToBuild[levelTypeIndex].waterType, new Vector3(0, -3.5f, 0), Quaternion.identity,mapholder);
     }
     private int GetRotation(int x, int y)
     {
@@ -149,8 +149,6 @@ public class MapGen : MonoBehaviour
         {
             return 180;
         }
-
-
 
         rotation = x == mapSize.x - 1 ? 270 : rotationRandom;
 
@@ -346,20 +344,6 @@ public class MapGen : MonoBehaviour
         shuffledCoords.Enqueue(randomCoord);
         return randomCoord;
     }
-    // I think this is to to find pingers
-
-    //public Transform GetTileFromPosition(Vector3 position)
-    //{
-     
-    //    int x = Mathf.RoundToInt(position.x + (mapSize.x - 1) / 2f);
-    //    int y = Mathf.RoundToInt(position.z + (mapSize.y - 1) / 2f);
-
-    //    x = Mathf.Clamp(x, 0, tileMap.GetLength(0) - 1);
-    //    y = Mathf.Clamp(y, 0, tileMap.GetLength(1) - 1);
-        
-    
-    //    return tileMap[x, y];
-    //}
 
     public Vector3 GetClosestTile(Vector3 playerPosition)
     {

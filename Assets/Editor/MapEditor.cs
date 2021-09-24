@@ -13,13 +13,13 @@ public class MapEditor : Editor
         if (DrawDefaultInspector())
         {
             map.GenerateMap();
-            map.spawnWeather();
+            map.SpawnWeather();
         }
 
         if (GUILayout.Button("Generate Map"))
         {
             map.GenerateMap();
-            map.spawnWeather();
+            map.SpawnWeather();
         }
     }
 }

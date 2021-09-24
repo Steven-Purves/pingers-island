@@ -26,10 +26,13 @@ public class CinemachineShake : MonoBehaviour
         startingIntensity = intensity;
         shakeTimerFull = time;
         shakeTimer = time;
+
+        print("setting shaking on vcam");
     }
 
     private void Update()
     {
+        
         if (shakeTimer > 0)
         {
             shakeTimer -= Time.deltaTime;
