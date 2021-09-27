@@ -62,6 +62,8 @@ public class MapGen : MonoBehaviour
 
     public void SpawnWeather()
     {
+        RenderSettings.skybox = levelToBuild[levelTypeIndex].skyboxType;
+
         foreach (Transform child in weatherSpawnPoint.transform)
         {
             DestroyImmediate(child.gameObject);

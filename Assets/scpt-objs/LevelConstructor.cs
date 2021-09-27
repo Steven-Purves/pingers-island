@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class LevelConstructor : ScriptableObject
 {
+    public Material skyboxType;
     public GameObject waterType;
     public GameObject[] weatherType;
     public GameObject[] groundTypes;
