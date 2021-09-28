@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_shader-new-lava
+  m_Shader: {fileID: -6465566751694194690, guid: f9775516c2a74c24e84e2b15eb9b2a9a,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_BE05C26A:
+        m_Texture: {fileID: 2800000, guid: 71bf10c9dfef96e4d88f6494328cf412, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_353B2536: 525.45
+    - Vector1_4C781685: 1.11
+    - Vector1_4DE4B6A9: 0.046
+    - Vector1_6F4EF46E: 7.4
+    - Vector1_C0F355CE: -0.02
+    - Vector1_D307B67: 4.23
+    - Vector1_FAA7FEF4: 0.01
+    m_Colors:
+    - Color_17504CA5: {r: 0.39560342, g: 0.55846936, b: 0.6603774, a: 0.62352943}
+    - Color_4F38766C: {r: 0.7735849, g: 0.650685, b: 0.53031915, a: 0.72156864}
+    - Color_4FE09FB3: {r: 0.8867924, g: 0.03943452, b: 0.030675106, a: 0.95686275}
+    - Color_932568AF: {r: 0.9056604, g: 0.712016, b: 0.2107511, a: 1}
+  m_BuildTextureStacks: []

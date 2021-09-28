@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fba8ef8d30b624cb73036991223b3a, type: 3}
+  m_Name: castle-light
+  m_EditorClassIdentifier: 
+  skyboxType: {fileID: 2100000, guid: eaa040ac8b21bd04d82e666ad2ee56ec, type: 2}
+  waterType: {fileID: 1151080275544784858, guid: 9d60aef0fd94923418d55a5c0c9e075d,
+    type: 3}
+  weatherType:
+  - {fileID: 6507604336515191114, guid: c631aeec8f0468142a7095118fa541c9, type: 3}
+  groundTypes:
+  - {fileID: 276932304465656736, guid: aa6e3b504c6aaac439f5f19ec8dc3860, type: 3}
+  - {fileID: 9182730779139725301, guid: a39f8042deb58864890f7c3303300f6b, type: 3}
+  - {fileID: 3849379372341374414, guid: a94d90fd4a974bf4ca3a5bb5c9a566a7, type: 3}
+  - {fileID: 4876572144516310889, guid: 441f1feabae2f0f43bbd0a2328b60a2a, type: 3}
+  - {fileID: 3634852374790332998, guid: 528ea3ee27d29c944bed904b0878cf0b, type: 3}
+  - {fileID: 1766783263741240120, guid: 54aab1449d8cb8b41964ccfc89d97602, type: 3}
+  - {fileID: 1803294274753830665, guid: 6b0204ef30f61ec4e947e8e8c7823eab, type: 3}
+  obsticles:
+  - {fileID: 1378363431306386626, guid: 81a6e558033004db9a0e6b6c875b38ea, type: 3}
+  obsticlesWithLayers:
+  - {fileID: 6029480852867048323, guid: 5ac860cd123e02a428b78d606f8cadc2, type: 3}
+  - {fileID: 1218229793721023826, guid: ab604d91dc3b93444bc7f6ace4108d50, type: 3}
+  natureObjects:
+  - {fileID: -927199367670048503, guid: 887eeb7eaf53f2c47936a754e83048f3, type: 3}
+  - {fileID: -927199367670048503, guid: 244bf91a77b9c8e4da1127af159ddc76, type: 3}
