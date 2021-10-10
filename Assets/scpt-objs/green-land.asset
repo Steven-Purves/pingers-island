@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fba8ef8d30b624cb73036991223b3a, type: 3}
+  m_Name: green-land
+  m_EditorClassIdentifier: 
+  skyboxType: {fileID: 2100000, guid: 08daf79467affad439c425eeaf6841ec, type: 2}
+  waterType: {fileID: 1151080275544784858, guid: 56be43114dd732640a5c58f945098fc0,
+    type: 3}
+  weatherType: []
+  groundTypes:
+  - {fileID: 4302415768730422560, guid: 371e6547071e15846909e19fd7cdfac9, type: 3}
+  - {fileID: -927199367670048503, guid: b416ad288b2c9914aa0e49865007d59a, type: 3}
+  - {fileID: 6341155087847862995, guid: 1faa9c7a9d0544d40818ca5a52cea1c9, type: 3}
+  - {fileID: 4302415768730422560, guid: 371e6547071e15846909e19fd7cdfac9, type: 3}
+  - {fileID: -927199367670048503, guid: b416ad288b2c9914aa0e49865007d59a, type: 3}
+  - {fileID: -927199367670048503, guid: b416ad288b2c9914aa0e49865007d59a, type: 3}
+  - {fileID: -927199367670048503, guid: b416ad288b2c9914aa0e49865007d59a, type: 3}
+  obsticles:
+  - {fileID: 5250050194656580983, guid: 1e62053020348cb4c8e29dbb6c8fb4f7, type: 3}
+  - {fileID: 5162931699920567505, guid: b1691b071fdcbdd4b8eea8a7a69366a7, type: 3}
+  - {fileID: 6252146317752075376, guid: ac7db54b18b2fef4d97f64cd5b8ac335, type: 3}
+  - {fileID: 1907421237078121384, guid: 2d40e0ca38240d44cb9cc5f0a9db37dd, type: 3}
+  obsticlesWithLayers:
+  - {fileID: 7973438407507242841, guid: e781258718d86ad4ab9f251a301809d1, type: 3}
+  - {fileID: 522571522644834262, guid: 6aaf8d511a1fe1546ac0313434427ace, type: 3}
+  natureObjects:
+  - {fileID: -927199367670048503, guid: 6f7ef0a842fa9644ba890fe6d137fbb5, type: 3}
+  - {fileID: -927199367670048503, guid: b88996ca4d946f74e81351ba09e81f6f, type: 3}
+  - {fileID: -927199367670048503, guid: b3263dc7b7331014e8cadd4d03baf81f, type: 3}
+  - {fileID: -927199367670048503, guid: 7a7978f3a3a436b4aa9fac728e38cdd3, type: 3}
+  - {fileID: -927199367670048503, guid: b91a0dd08c58136499931a99a602df02, type: 3}
+  - {fileID: -927199367670048503, guid: b575106bdad4b2c48aa97f86fe5c0e0e, type: 3}
+  - {fileID: -927199367670048503, guid: 244bf91a77b9c8e4da1127af159ddc76, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79fba8ef8d30b624cb73036991223b3a, type: 3}
-  m_Name: Dessert
+  m_Name: dessert
   m_EditorClassIdentifier: 
   skyboxType: {fileID: 2100000, guid: 33ab377b49aa14f6fae6e5bac230a5d4, type: 2}
   waterType: {fileID: 1151080275544784858, guid: 1d94c168cdd17794a9ac8bbd737ceb44,
@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 5959712822805062108, guid: f8d152f4ca40bf049afe702e2ce3f2d3, type: 3}
   obsticles:
   - {fileID: 1378363431306386626, guid: 81a6e558033004db9a0e6b6c875b38ea, type: 3}
-  - {fileID: -927199367670048503, guid: 7fdf3a3229b681f499ca229c5ad0d6cc, type: 3}
+  - {fileID: 318424674829801227, guid: a75bb23542c810f4db31647bc609b6b6, type: 3}
   - {fileID: 832182160800607751, guid: 1ab4d7a1b56fd423a90d1977e8d4e45c, type: 3}
   - {fileID: 2490425310270295075, guid: 421d88f52ec1240299c612799a9a7836, type: 3}
   - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}

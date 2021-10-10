@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1907421237078121384
+--- !u!1 &5162931699920567505
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1536830747919271379}
-  - component: {fileID: 7433899202283031078}
-  - component: {fileID: 3035793132623240079}
+  - component: {fileID: 8213777225444003522}
+  - component: {fileID: 911473566544278772}
+  - component: {fileID: 6889026432287918093}
+  - component: {fileID: 5564078017510252271}
   m_Layer: 0
-  m_Name: prefab-rock-med
+  m_Name: prefab-awesome-treefbx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1536830747919271379
+--- !u!4 &8213777225444003522
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907421237078121384}
+  m_GameObject: {fileID: 5162931699920567505}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.98531187, y: 1.7033129, z: -6.1489983}
+  m_LocalPosition: {x: -1.6959314, y: -0.0026564756, z: -6.3287106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7433899202283031078
+--- !u!33 &911473566544278772
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907421237078121384}
-  m_Mesh: {fileID: 4300000, guid: e5b043d8677814f29a5ede04b128dfd4, type: 3}
---- !u!23 &3035793132623240079
+  m_GameObject: {fileID: 5162931699920567505}
+  m_Mesh: {fileID: -3142649664740890969, guid: 0985df8a7af901b4ba7dafcd50ee7467, type: 3}
+--- !u!23 &6889026432287918093
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907421237078121384}
+  m_GameObject: {fileID: 5162931699920567505}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -55,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -70,7 +72,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -79,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5564078017510252271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162931699920567505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.836607, y: 6.348432, z: 2.0104065}
+  m_Center: {x: -0.9281688, y: 3.1768725, z: 0.6875639}

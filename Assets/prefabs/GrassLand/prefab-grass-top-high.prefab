@@ -48,6 +48,9 @@ MonoBehaviour:
   heightToSpawnObstacle: 2.01
   obstaclesToSpawn:
   - {fileID: -927199367670048503, guid: 0985df8a7af901b4ba7dafcd50ee7467, type: 3}
+  - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}
+  - {fileID: -927199367670048503, guid: b575106bdad4b2c48aa97f86fe5c0e0e, type: 3}
+  - {fileID: -927199367670048503, guid: b88996ca4d946f74e81351ba09e81f6f, type: 3}
   flagPole: {fileID: 4971686387833319149, guid: 928a425895bc0b84d9c1ea4362c1d28e,
     type: 3}
   castleWallObjects: []
@@ -114,6 +117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -138,6 +142,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5310935934099691422
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +154,7 @@ GameObject:
   - component: {fileID: 8505474077765860953}
   - component: {fileID: 6587115866736553692}
   - component: {fileID: 5918649314980652404}
+  - component: {fileID: 8863556041600325205}
   m_Layer: 0
   m_Name: mesh-rocks
   m_TagString: Untagged
@@ -193,6 +199,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -217,3 +224,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8863556041600325205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310935934099691422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.906939, y: 4.137209, z: 5.786034}
+  m_Center: {x: 0, y: 1.9446769, z: 0}
