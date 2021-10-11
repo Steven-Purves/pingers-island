@@ -282,7 +282,7 @@ public class MapGen : MonoBehaviour
 
     void CreateGroundLevelObstacle(Vector3 newPosition)
     {
-        Vector3 randomMovePosition = new Vector3(newPosition.x +  UnityEngine.Random.Range(-1f, 1f), newPosition.y, newPosition.z +  UnityEngine.Random.Range(-1f, 1f));
+        Vector3 randomMovePosition = new Vector3(newPosition.x +  UnityEngine.Random.Range(-.8f, .8f), newPosition.y, newPosition.z +  UnityEngine.Random.Range(-.8f, .8f));
 
         int obstacleIndex =  UnityEngine.Random.Range(0, levelToBuild[levelTypeIndex].obsticles.Length);
 
