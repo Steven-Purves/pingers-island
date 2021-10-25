@@ -7,7 +7,7 @@ public class PlayerAnimations : MonoBehaviour
 {
     private bool pingersDead;
     public Animator myAnimator;
-    private GunController.GunType currentGun;
+    private GunType currentGun;
 
     private void Start()
     {
@@ -16,13 +16,20 @@ public class PlayerAnimations : MonoBehaviour
         GunController.OnGunSwap += GunSwap; 
     }
 
+    private void OnDestroy()
+    {
+        Player.OnPlayerDied -= PlayerDied;
+        Player.OnPlayerHit -= PlayerHit;
+        GunController.OnGunSwap -= GunSwap;
+    }
+
     public void AnimateWalk(float forward, float side)
     {
         myAnimator.SetFloat("Forward", forward);
         myAnimator.SetFloat("Side", side); ;
     }
 
-    private void GunSwap(GunController.GunType gunType)
+    private void GunSwap(GunType gunType)
     {
         if (pingersDead)
         {
@@ -35,27 +42,27 @@ public class PlayerAnimations : MonoBehaviour
 
         switch (gunType)
         {
-            case (GunController.GunType.BAZOOKA):
+            case (GunType.BAZOOKA):
                 myAnimator.SetLayerWeight(1, 0.5f);
                 myAnimator.SetTrigger("Bazooka");
                 break;
-            case (GunController.GunType.GRENADE_LAUNCHER):
+            case (GunType.GRENADE_LAUNCHER):
                 myAnimator.SetLayerWeight(1, 0.5f);
                 myAnimator.SetTrigger("Bazooka");
                 break;
-            case (GunController.GunType.REVOLVER):
+            case (GunType.REVOLVER):
                 myAnimator.SetTrigger("Pistol");
                 break;
-            case (GunController.GunType.TOMMYGUN):
+            case (GunType.TOMMYGUN):
                 myAnimator.SetTrigger("Rifle");
                 break;
-            case (GunController.GunType.SPACE_GUN):
+            case (GunType.SPACE_GUN):
                 myAnimator.SetTrigger("Pistol");
                 break;
-            case (GunController.GunType.UZI):
+            case (GunType.UZI):
                 myAnimator.SetTrigger("Pistol");
                 break;
-            case (GunController.GunType.SHOTGUN):
+            case (GunType.SHOTGUN):
                 myAnimator.SetTrigger("Rifle");
                 break;
         }    

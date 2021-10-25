@@ -26,8 +26,7 @@ public class MapGen : MonoBehaviour
     bool[,] obstacleMap;
     int levelTypeIndex;
     Vector3 zero = new Vector3(0, 0, 0);
-
-    string holderName = "Generated Map";
+    readonly string holderName = "Generated Map";
     Transform mapholder;
 
 
@@ -72,7 +71,7 @@ public class MapGen : MonoBehaviour
         if (levelToBuild[levelTypeIndex].weatherType.Length > 0)
         {
 
-            Instantiate(levelToBuild[levelTypeIndex].weatherType[0], weatherSpawnPoint.position , Quaternion.identity, weatherSpawnPoint);
+           Instantiate(levelToBuild[levelTypeIndex].weatherType[0], weatherSpawnPoint.position , Quaternion.identity, weatherSpawnPoint);
         }
     }
 
@@ -286,8 +285,7 @@ public class MapGen : MonoBehaviour
 
         int obstacleIndex =  UnityEngine.Random.Range(0, levelToBuild[levelTypeIndex].obsticles.Length);
 
-        GameObject newObstacle = Instantiate(levelToBuild[levelTypeIndex].obsticles[obstacleIndex], randomMovePosition,
-            Quaternion.Euler(new Vector3(0,  UnityEngine.Random.Range(0, 360), 0)));
+        GameObject newObstacle = Instantiate(levelToBuild[levelTypeIndex].obsticles[obstacleIndex], randomMovePosition, Quaternion.Euler(new Vector3(0,  UnityEngine.Random.Range(0, 360), 0)));
 
         newObstacle.layer = 9;
         newObstacle.transform.parent = mapholder;
@@ -331,6 +329,7 @@ public class MapGen : MonoBehaviour
             }
 
         }
+
         int targetAccessibleTileCount = (int)mapSize.x * (int)mapSize.y - _currentObstacleCount;
         return targetAccessibleTileCount == accessibleTileCount;
     }

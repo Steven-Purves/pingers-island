@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Spawner : TrackPlayer
 {
+    public GamePeriodManager gamePeriodManager;
     public GameObject enemy;
     public Crate_Move crate;
 
     float timeBetweenSpawns = 3;
-    public int NumberOfEnemies;
+    public int startingEnemiesNumber;
 
     int enemiesRemaningToSpawn;
     float nextSpawnTime;
@@ -22,19 +23,39 @@ public class Spawner : TrackPlayer
 
     Vector3 _up = Vector3.up;
 
+    private bool roundStarted;
+
     public MapGen map;
 
     void Start()
     {
-        enemiesRemaningToSpawn = NumberOfEnemies;
+        EnemyLife.OnEnemyDeath += EnemyDeath;
+
+        enemiesRemaningToSpawn = startingEnemiesNumber;
         nextCampCheckTime = timeBetweenCampingChecks + Time.time;
 
-        Invoke("SpawnCrate", 1);
+        Invoke(nameof(SpawnCrate), 7);
+        Invoke(nameof(StartRound), 3);
+    }
+
+    private void StartRound()
+    {
+        roundStarted = true;
+    }
+
+    private void EnemyDeath()
+    {
+        startingEnemiesNumber--;
+
+        if(startingEnemiesNumber <= 0)
+        {
+            gamePeriodManager.LevelComplete();
+        }
     }
 
     void Update()
     {
-        if (GamePeriod.isGameOver)
+        if (GamePeriodManager.isGameOver || !roundStarted)
         {
             return;
         }
@@ -62,10 +83,11 @@ public class Spawner : TrackPlayer
 
         Vector3 spawnTile = map.GetRandomOpenTile().position;
        
-        if (isCamping && Time.time > 3)
+        if (isCamping && enemiesRemaningToSpawn < startingEnemiesNumber - 3)
         {
             spawnTile = map.GetClosestTile(playerTransform.position);
         }
+
         float spawnTimer = 0;
 
         while (spawnTimer < spawnDelay)
@@ -82,4 +104,10 @@ public class Spawner : TrackPlayer
         Crate_Move crate_Move = Instantiate(crate);
         crate_Move.MapGen = map;
     }
+
+    private void OnDestroy()
+    {
+        EnemyLife.OnEnemyDeath -= EnemyDeath;
+    }
+
 }

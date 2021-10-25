@@ -9,7 +9,6 @@ public class SlowDown : MonoBehaviour
 	public void SlowdownTime()
 	{
 		StartCoroutine(ScaleTime(0.2f, 1f,1));
-
 	}
 
 	IEnumerator ScaleTime(float start, float end, float time)

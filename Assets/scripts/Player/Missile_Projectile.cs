@@ -39,7 +39,7 @@ public class Missile_Projectile : Projectile
                 {
                     Living livingBeing = collider.gameObject.GetComponent<Living>();
 
-                    livingBeing.TakeDamage(distanceCheck(livingBeing.transform.position), true);
+                    livingBeing.TakeDamage(DistanceCheck(livingBeing.transform.position), true);
                 }
             }
 
@@ -51,7 +51,7 @@ public class Missile_Projectile : Projectile
             }
         }
     }
-    private int distanceCheck(Vector3 colliderPosition)
+    private int DistanceCheck(Vector3 colliderPosition)
     {
         return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
     }

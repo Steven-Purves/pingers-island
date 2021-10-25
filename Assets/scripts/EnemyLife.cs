@@ -8,7 +8,7 @@ public class EnemyLife : Living
     public Enemy_Components enemy_Components;
     public float forceBlowBack = 100;
  
-    public static event Action<int> OnEnemyDeath;
+    public static event Action OnEnemyDeath;
    
     Vector3 lastHitPoint;
     Vector3 lastHitDirection;
@@ -25,7 +25,12 @@ public class EnemyLife : Living
         PoolManager.Instance.ReuseObject(enemy_Components.hitBonerParticle, _hitPoint, Quaternion.identity);
         lastHitPoint = _hitPoint;
         lastHitDirection = _hitDirection;
-        base.TakeHit(damage, _hitPoint, _hitDirection);  
+        base.TakeHit(damage, _hitPoint, _hitDirection);
+
+        if (!dead)
+        {
+            GamePeriodManager.OnAddScore?.Invoke(15);
+        }
     }
 
     public override void Die(bool enemyCausedDeath)
@@ -43,7 +48,10 @@ public class EnemyLife : Living
 
         CinemachineShake.Instance.ShakeCamera(2f, .3f);
 
-        OnEnemyDeath?.Invoke(pointsOnDeath);
+        GamePeriodManager.OnAddScore?.Invoke(pointsOnDeath);
+        OnEnemyDeath?.Invoke();
+        
+
         enemy_Components.enermy_State_Methods.BlowUp(lastHitPoint, lastHitDirection, forceBlowBack, 20f);
     }
 }

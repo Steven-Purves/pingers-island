@@ -14,7 +14,7 @@ public class DroppedGun : PoolObject
 	{
 		rb = GetComponent<Rigidbody>();
 	}
-	// Start is called before the first frame update
+	
 	public override void OnObjReuse()
     {
 		rb.velocity = Vector3.zero;

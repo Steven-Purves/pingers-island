@@ -30,4 +30,9 @@ public class Level_Camera : MonoBehaviour
 
         spinner.SetActive(true);
     }
+
+    private void OnDestroy()
+    {
+        Player.OnPlayerDied -= PlayerDied;
+    }
 }

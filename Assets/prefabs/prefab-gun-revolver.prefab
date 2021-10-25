@@ -273,6 +273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzelFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 385043404656661227, guid: a7befef8e6f166c46ae39016cd31c2db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7befef8e6f166c46ae39016cd31c2db, type: 3}
 --- !u!1 &5459613762525917398 stripped

@@ -1,23 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FadeToNext : MonoBehaviour
 {
-     Animator animator;
-	 string fadeOut = "FadeOut";
-	 int levelToLoad;
+	public static Action<int> OnFadeToLevel;
+    public Animator animator;
+	private const string fadeOut = "FadeOut";
+	private int levelToLoad;
+
+
 	private void Start()
 	{
-		animator = GetComponent<Animator>();
+		OnFadeToLevel += FadeToLevel;
 	}
 
-	public void FadeToLevel(int levelIndex)
+    private void OnDestroy()
+    {
+		OnFadeToLevel -= FadeToLevel;
+	}
+
+    public void FadeToLevel(int levelIndex)
 	{
 		levelToLoad = levelIndex;
 		animator.SetTrigger(fadeOut);
 	}
+
 	public void OnFadeComplete()
 	{
 		SceneManager.LoadScene(levelToLoad);

@@ -63,7 +63,7 @@ public class Projectile_Granade : PoolObject
                 {
                     Living livingBeing = collider.gameObject.GetComponent<Living>();
 
-                    livingBeing.TakeDamage(distanceCheck(livingBeing.transform.position), true);
+                    livingBeing.TakeDamage(DistanceCheck(livingBeing.transform.position), true);
 
                 }
             }
@@ -79,7 +79,7 @@ public class Projectile_Granade : PoolObject
         gameObject.SetActive(false);
     }
 
-    private int distanceCheck(Vector3 colliderPosition)
+    private int DistanceCheck(Vector3 colliderPosition)
     {
         return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
     }

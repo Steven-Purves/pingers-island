@@ -42,18 +42,35 @@ public class PickUp : PoolObject
             switch (type)
             {
                 case PickUpType.CHICKEN_LEG:
+                    GamePeriodManager.OnAddScore?.Invoke(100);
                     other.GetComponent<Player>().EatChicken();
                     break;
                 case PickUpType.SHIELD:
-                 
+                    GamePeriodManager.OnAddScore?.Invoke(150);
                     other.GetComponentInChildren<Force_Field>().ShieldsUp();
                     break;
                 case PickUpType.UZI:
+                    player.EquipGun((int)type);
+                    GamePeriodManager.OnAddScore?.Invoke(175);
+                    break;
                 case PickUpType.SHOT_GUN:
+                    player.EquipGun((int)type);
+                    GamePeriodManager.OnAddScore?.Invoke(200);
+                    break;
                 case PickUpType.TOMMY_GUN:
+                    GamePeriodManager.OnAddScore?.Invoke(250);
+                    player.EquipGun((int)type);
+                    break;
                 case PickUpType.GRENADE_LAUNCHER:
+                    GamePeriodManager.OnAddScore?.Invoke(300);
+                    player.EquipGun((int)type);
+                    break;
                 case PickUpType.BAZOOKA:
+                    GamePeriodManager.OnAddScore?.Invoke(400);
+                    player.EquipGun((int)type);
+                    break;
                 case PickUpType.SPACE_GUN:
+                    GamePeriodManager.OnAddScore?.Invoke(500);
                     player.EquipGun((int)type);
                     break;
                 default:

@@ -22,8 +22,18 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAnimations = GetComponent<PlayerAnimations>();
 
-        Player.OnPlayerDied += () => isLooking = false; 
+        Player.OnPlayerDied += IsLooking; 
     }
+
+    private void OnDestroy()
+    {
+        Player.OnPlayerDied -= IsLooking;
+    }
+
+    private void IsLooking() 
+    {
+        isLooking = false;
+    } 
 
     void Update() 
     {

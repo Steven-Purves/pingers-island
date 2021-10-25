@@ -42,7 +42,6 @@ public class Projectile : PoolObject {
 	    timer = lifeTime + Time.time;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		if (Time.time > timer)gameObject.SetActive(false);
@@ -70,7 +69,6 @@ public class Projectile : PoolObject {
 
 		
 		if (damagableObject != null) {
-
 
 			damagableObject.TakeHit(damage,hitPoint,transform.forward);
         }

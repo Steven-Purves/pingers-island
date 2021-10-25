@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3642841453723252307}
   - component: {fileID: 4306742837440019963}
   - component: {fileID: 420956326912446461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh-rocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7344393870393521635}
   - component: {fileID: 4243580743865318910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: prefab-grass-top-small 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5259607817212170610}
   - component: {fileID: 1536995690652648911}
   - component: {fileID: 9022183790113749023}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh-top-grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

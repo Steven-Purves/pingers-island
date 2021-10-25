@@ -26,10 +26,10 @@ MonoBehaviour:
   - {fileID: 5959712822805062108, guid: f8d152f4ca40bf049afe702e2ce3f2d3, type: 3}
   obsticles:
   - {fileID: 1378363431306386626, guid: 81a6e558033004db9a0e6b6c875b38ea, type: 3}
-  - {fileID: 318424674829801227, guid: a75bb23542c810f4db31647bc609b6b6, type: 3}
+  - {fileID: 318424674829801227, guid: 5f75c2a625c67854787d6d9237a82653, type: 3}
   - {fileID: 832182160800607751, guid: 1ab4d7a1b56fd423a90d1977e8d4e45c, type: 3}
   - {fileID: 2490425310270295075, guid: 421d88f52ec1240299c612799a9a7836, type: 3}
-  - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}
+  - {fileID: 1907421237078121384, guid: 2d40e0ca38240d44cb9cc5f0a9db37dd, type: 3}
   obsticlesWithLayers:
   - {fileID: 522571522644834262, guid: bb7e97c00cc7f624aacb977a296017e0, type: 3}
   - {fileID: 7973438407507242841, guid: 1b54f40448c2ffd4da8e73d021efde7e, type: 3}

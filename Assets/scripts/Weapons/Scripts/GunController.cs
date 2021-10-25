@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+public enum GunType { REVOLVER, UZI, SHOTGUN, TOMMYGUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN }
+
 public class GunController : MonoBehaviour
 {
 	public Transform weaponHold;
@@ -12,8 +14,6 @@ public class GunController : MonoBehaviour
 	public GameObject[] droppedGuns;
 
 	private Gun equippedGun;
-	
-	public enum GunType { REVOLVER, UZI, SHOTGUN, TOMMYGUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN }
 	public GunType equippedGunType = GunType.REVOLVER;
 
 	public static Action<GunType> OnGunSwap;
@@ -38,6 +38,18 @@ public class GunController : MonoBehaviour
 		equippedGun.transform.parent = weaponHold;
 		equippedGun.Init(this);
 		equippedGunType = (GunType)gunToEquip;
+
+
+		if (equippedGunType == GunType.REVOLVER)
+		{
+			UI_Gun.OnAmmoChange?.Invoke("INFINITE");
+		}
+		else
+		{
+			UI_Gun.OnAmmoChange?.Invoke(equippedGun.shotsLeft.ToString());
+		}
+
+		UI_Gun.OnGunChange?.Invoke(equippedGunType);
 
 		OnGunSwap?.Invoke(equippedGunType);
 	}

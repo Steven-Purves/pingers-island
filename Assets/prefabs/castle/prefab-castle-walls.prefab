@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6042305491375554331}
   - component: {fileID: 2138134620236100485}
   - component: {fileID: 3419713714112095884}
+  - component: {fileID: 6304413490918582644}
   m_Layer: 0
   m_Name: prefab-castle-walls
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3419713714112095884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,3 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torch: {fileID: 815889785790902824, guid: ae6c1ccc348694d4f8f69286e99e37f9, type: 3}
   shield: {fileID: 3346144492397232218, guid: fbd01c641748473439946ff646382d23, type: 3}
+--- !u!65 &6304413490918582644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029480852867048323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0677166, y: 4.0272336, z: 4.0677176}
+  m_Center: {x: 0.00000035762787, y: 2.000528, z: 0}

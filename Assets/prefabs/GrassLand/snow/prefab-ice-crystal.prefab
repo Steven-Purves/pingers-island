@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3498610796558738754}
   - component: {fileID: 3506339066367588088}
   - component: {fileID: 3578444895023635632}
-  m_Layer: 0
+  - component: {fileID: 7910560699509575777}
+  m_Layer: 9
   m_Name: prefab-ice-crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3529484205831168948}
-  m_LocalRotation: {x: -0.26692414, y: -0, z: -0, w: 0.9637176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.7711415, y: -0.91, z: 0.32799625}
   m_LocalScale: {x: 75.35544, y: 75.35544, z: 75.35544}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -30.963001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3498610796558738754
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &3578444895023635632
 Animator:
   serializedVersion: 3
@@ -100,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7910560699509575777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529484205831168948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.051456627, y: 0.051840115, z: 0.037308287}
+  m_Center: {x: -0.005565625, y: 0.023469407, z: 0.013663684}

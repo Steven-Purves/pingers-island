@@ -84,9 +84,18 @@ public class Gun : MonoBehaviour
             
             shotsLeft--;
 
+            if (gunController.equippedGunType == GunType.REVOLVER)
+            {
+                UI_Gun.OnAmmoChange?.Invoke("INFINITE");
+            }
+            else
+            {
+                UI_Gun.OnAmmoChange?.Invoke(shotsLeft.ToString());
+            }
+
             gun_Fire.ShootBullet();
 
-            if (gunController.equippedGunType == GunController.GunType.REVOLVER)
+            if (gunController.equippedGunType == GunType.REVOLVER)
             {
                 isAiming = false;
 
@@ -103,7 +112,7 @@ public class Gun : MonoBehaviour
 
             if (shotsLeft == 0 && !infiniteAmmo)
             {
-                gunController.EquipGun((int)GunController.GunType.REVOLVER);
+                gunController.EquipGun((int)GunType.REVOLVER);
                 return;
             }
 

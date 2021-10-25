@@ -16,7 +16,17 @@ public class PlayerInput : MonoBehaviour
     {
         gunController = GetComponent<GunController>();
 
-        Player.OnPlayerDied += () => { isDisabled = true; };
+        Player.OnPlayerDied += IsDisabled;
+    }
+
+    private void OnDestroy()
+    {
+        Player.OnPlayerDied -= IsDisabled;
+    }
+
+    private void IsDisabled()
+    {
+        isDisabled = true;
     }
 
     void Update()

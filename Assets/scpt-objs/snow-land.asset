@@ -30,6 +30,7 @@ MonoBehaviour:
   - {fileID: 318424674829801227, guid: a75bb23542c810f4db31647bc609b6b6, type: 3}
   - {fileID: 5250050194656580983, guid: 9aa96951ae4744917ae03e673a87a6b1, type: 3}
   - {fileID: 5162931699920567505, guid: 1aac424ea28606b419003a35ee7faf67, type: 3}
+  - {fileID: 3529484205831168948, guid: 3db8e6a289ef8e14dbbb90d36e9d44c8, type: 3}
   obsticlesWithLayers:
   - {fileID: 7973438407507242841, guid: 55a82c62b878daa41a4c2dd7861857d2, type: 3}
   - {fileID: 522571522644834262, guid: 68706e614e33c444fa36fd59f49c08cf, type: 3}

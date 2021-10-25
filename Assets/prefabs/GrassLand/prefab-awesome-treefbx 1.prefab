@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 911473566544278772}
   - component: {fileID: 6889026432287918093}
   - component: {fileID: 5564078017510252271}
-  m_Layer: 0
-  m_Name: prefab-awesome-treefbx
+  m_Layer: 9
+  m_Name: prefab-awesome-treefbx 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

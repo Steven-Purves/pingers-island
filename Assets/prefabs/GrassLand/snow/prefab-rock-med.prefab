@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7433899202283031078}
   - component: {fileID: 3035793132623240079}
   - component: {fileID: 4667490075113155466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: prefab-rock-med
   m_TagString: Untagged
   m_Icon: {fileID: 0}

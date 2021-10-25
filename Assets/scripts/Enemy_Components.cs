@@ -22,7 +22,7 @@ public class Enemy_Components : TrackPlayer
     public GameObject boneInHand, fireballInHand, throwingBone, throwingFireball, greenGroundStompParticle, redExpolsionParticle, dirtParticle, hitPingersParticle, hitBonerParticle, deathParticle;
 
     [Space]
-    public BoxCollider[] handColliders; //switch off at start!
+    public BoxCollider[] handColliders;
     public TrailRenderer[] handTrails;
     public Enemy_Data[] enemy_Data;
 }
