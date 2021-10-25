@@ -12,7 +12,10 @@ public class GamePeriodManager : MonoBehaviour
 
     public TMP_Text scoreUI;
     public TMP_Text hiScorceUI;
-    public GameObject gameOver;
+    public TMP_Text GameResultText;
+
+    public CanvasGroup inGameCanvasGroup;
+    public CanvasGroup gameOverCanvasGroup;
 
     private CurrentGameSaveObject currentGameData;
 
@@ -39,16 +42,32 @@ public class GamePeriodManager : MonoBehaviour
     {
         isGameOver = true;
         SaveManagerGame.OnResetGame?.Invoke(currentGameData);
-        gameOver.SetActive(true);
-        levelToLoad = 1;
+
+        GameResultText.text = "Defeat!";
+        GameResultText.gameObject.SetActive(true);
+        
+        levelToLoad = 1;  // this will be 2 later
         Invoke(nameof(FadeOut), 5);
     }
 
     public void LevelComplete()
     {
         SaveManagerGame.OnSaveCurrentGame?.Invoke(currentGameData);
+
+        GameResultText.text = "Victory!";
+        GameResultText.gameObject.SetActive(true);
+        inGameCanvasGroup.LeanAlpha(0,0.3f);
         levelToLoad = 1;
-        Invoke(nameof(FadeOut), 5);
+
+        Invoke(nameof(ShowStats), 4);
+    }
+
+    private void ShowStats()
+    {
+        GameResultText.gameObject.transform.LeanScale(Vector3.zero, 0.2f);
+        gameOverCanvasGroup.LeanAlpha(1, 0.3f);
+
+        //stats
     }
 
     private void FadeOut()

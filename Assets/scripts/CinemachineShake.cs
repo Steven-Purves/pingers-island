@@ -29,8 +29,6 @@ public class CinemachineShake : MonoBehaviour
         startingIntensity = intensity;
         shakeTimerFull = time;
         shakeTimer = time;
-
-        print("setting shaking on vcam");
     }
 
     private void Update()

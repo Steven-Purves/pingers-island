@@ -7,6 +7,7 @@ public class Player : Living
 {
     public static event Action OnPlayerDied;
     public static event Action OnPlayerHit;
+    public static event Action OnPlayerEatChicken;
 
     public SkinnedMeshRenderer SkinnedMeshRenderer;
     public Player_Particles player_Particles;
@@ -41,6 +42,7 @@ public class Player : Living
     public void EatChicken()
     {
         player_Particles.heal_Particle.Play();
+        OnPlayerEatChicken?.Invoke();
         base.TakeDamage(-1);
     }
 

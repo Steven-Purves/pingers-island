@@ -42,6 +42,8 @@ public class UI_Gun : MonoBehaviour
 
     private async void GunChange(GunType gunType)
     {
+        print("NO ASYNC");
+
         canvasGroup.LeanAlpha(0, 0.2f);
 
         await Task.Delay(270);
