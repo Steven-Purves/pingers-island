@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePeriodManager : MonoBehaviour
 {
+    public SaveManagerSession saveManagerSession;
     public static Action<int> OnAddScore;
     public static bool isGameOver;
 
@@ -40,13 +41,14 @@ public class GamePeriodManager : MonoBehaviour
 
     private void GameOver()
     {
+        saveManagerSession.Save(currentGameData.currentScore);
         isGameOver = true;
         SaveManagerGame.OnResetGame?.Invoke(currentGameData);
 
         GameResultText.text = "Defeat!";
         GameResultText.gameObject.SetActive(true);
         
-        levelToLoad = 1;  // this will be 2 later
+        levelToLoad = 2;  // this will be 2 later
         Invoke(nameof(FadeOut), 5);
     }
 
@@ -67,6 +69,7 @@ public class GamePeriodManager : MonoBehaviour
         GameResultText.gameObject.transform.LeanScale(Vector3.zero, 0.2f);
         gameOverCanvasGroup.LeanAlpha(1, 0.3f);
 
+        Invoke(nameof(FadeOut), 5);
         //stats
     }
 

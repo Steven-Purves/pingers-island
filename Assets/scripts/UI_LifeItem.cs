@@ -10,6 +10,8 @@ public class UI_LifeItem : MonoBehaviour
     public Sprite heart;
     public Sprite Skull;
 
+    private IEnumerator couroute; 
+
     private void Awake()
     {
         transform.localScale = Vector3.zero;
@@ -22,13 +24,21 @@ public class UI_LifeItem : MonoBehaviour
 
     public void Changed(bool isHurt)
     {
-        if (isHurt)
+        if(couroute != null)
         {
-            myImage.sprite = Skull;
+            StopCoroutine(couroute);
         }
-        else
-        {
-            myImage.sprite = heart;
-        }
+
+        couroute = SwitchImage(isHurt? Skull : heart);
+        StartCoroutine(couroute);
+    }
+
+    private IEnumerator SwitchImage(Sprite sprite)
+    {
+        float time = 0.2f;
+        transform.LeanScale(Vector3.zero, time).setEaseInCubic();
+        yield return new WaitForSeconds(time);
+        myImage.sprite = sprite;
+        transform.LeanScale(Vector3.one, time).setEaseOutCubic();
     }
 }

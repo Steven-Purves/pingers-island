@@ -21,7 +21,7 @@ public class UI_Life : MonoBehaviour
         Player.OnPlayerEatChicken += PlayerEatsChicken;
     }
 
-    IEnumerator SpawnLives()
+    private IEnumerator SpawnLives()
     {
         lifeItems = new UI_LifeItem[health]; 
 

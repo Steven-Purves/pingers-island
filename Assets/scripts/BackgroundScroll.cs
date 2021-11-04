@@ -20,6 +20,5 @@ public class BackgroundScroll : MonoBehaviour
     void Update()
     {
         img.material.mainTextureOffset = img.material.mainTextureOffset + new Vector2(Time.deltaTime * (-scrollSpeed / 5), Time.deltaTime * (-scrollSpeed / 10));
-
     }
 }

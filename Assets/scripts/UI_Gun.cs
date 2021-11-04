@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +23,8 @@ public class UI_Gun : MonoBehaviour
     public Sprite bazooka;
     public Sprite spaceGun;
 
+    private IEnumerator courotine;
+
     public void Awake()
     {
         OnAmmoChange += AmmoChange;
@@ -40,13 +42,22 @@ public class UI_Gun : MonoBehaviour
         ammoCount.text = value;
     }
 
-    private async void GunChange(GunType gunType)
+    private void GunChange(GunType gunType)
     {
-        print("NO ASYNC");
+       if(courotine != null)
+       {
+            StopCoroutine(courotine);
+       }
 
+        courotine = SwapGun(gunType);
+        StartCoroutine(courotine);
+    }
+
+    private IEnumerator SwapGun(GunType gunType)
+    {
         canvasGroup.LeanAlpha(0, 0.2f);
 
-        await Task.Delay(270);
+        yield return new WaitForSeconds(0.2f);
 
         switch (gunType)
         {

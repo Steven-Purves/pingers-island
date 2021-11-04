@@ -66,5 +66,4 @@ public class SaveManagerGame : MonoBehaviour
             File.WriteAllText(saveCurrentPath, json);
         }
     }
-
 }

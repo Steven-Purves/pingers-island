@@ -7,6 +7,7 @@ public class Spawner : TrackPlayer
 {
     public GamePeriodManager gamePeriodManager;
     public GameObject enemy;
+    public GameObject dirt;
     public Crate_Move crate;
 
     float timeBetweenSpawns = 3;
@@ -96,7 +97,8 @@ public class Spawner : TrackPlayer
             yield return null;
         }
 
-        PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f)) ;
+        PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f));
+        PoolManager.Instance.ReuseObject(dirt, spawnTile, Quaternion.identity);
     }
 
     private void SpawnCrate()
