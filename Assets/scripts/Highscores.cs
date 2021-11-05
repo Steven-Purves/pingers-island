@@ -11,18 +11,17 @@ public class Highscores : MonoBehaviour
     const string publicCode = "6179ab7c8f40bba8b4fcdb91";
     const string webURL = "https://www.dreamlo.com/lb/";
 
+    public GameObject updatingPage;
+    public GameObject scoresDisplayPage;
+
 	HighscoresDisplay highscoreDisplay;
 	public Highscore[] highscoresList;
 	static Highscores instance;
-
-	public TMP_Text highScore;
 
 	void Awake()
 	{
 		highscoreDisplay = GetComponent<HighscoresDisplay>();
 		instance = this;
-
-		//StartCoroutine(UploadNewHighscore("kenny", 1001));
 	}
 
 	public static void AddNewHighscore(string username, int score)
@@ -74,6 +73,12 @@ public class Highscores : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+
+                if (updatingPage.activeInHierarchy)
+                {
+                    updatingPage.SetActive(false);
+                    scoresDisplayPage.SetActive(true);
+                }
 
                 FormatHighscores(webRequest.downloadHandler.text);
                 highscoreDisplay.OnHighscoresDownloaded(highscoresList);
