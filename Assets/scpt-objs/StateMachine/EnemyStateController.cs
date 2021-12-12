@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-using System.Runtime.InteropServices;
+﻿using UnityEngine;
 
-public class EnemyStateController : TrackPlayer
+public class EnemyStateController : MonoBehaviour
 {
     [HideInInspector] public Enemy_Components enemy_Components;
     [Space]

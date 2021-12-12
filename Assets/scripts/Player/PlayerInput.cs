@@ -17,16 +17,19 @@ public class PlayerInput : MonoBehaviour
         gunController = GetComponent<GunController>();
 
         Player.OnPlayerDied += IsDisabled;
+        Spawner.OnPlayerWin += IsDisabled;
     }
 
     private void OnDestroy()
     {
+        Spawner.OnPlayerWin -= IsDisabled;
         Player.OnPlayerDied -= IsDisabled;
     }
 
     private void IsDisabled()
     {
         isDisabled = true;
+        gunController.OnTriggerRelease();
     }
 
     void Update()
@@ -51,7 +54,7 @@ public class PlayerInput : MonoBehaviour
 
     private void MouseInput()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !isDisabled)
         {
             gunController.OnTriggerHold();
 

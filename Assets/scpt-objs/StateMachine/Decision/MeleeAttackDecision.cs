@@ -26,7 +26,7 @@ public class MeleeAttackDecision : Decision
         }
 
         Vector3 forward = controller.transform.forward;
-        Vector3 toOther = (controller.playerTransform.position - controller.transform.position).normalized;
+        Vector3 toOther = (Player.pTransform.position - controller.transform.position).normalized;
 
         if (Vector3.Dot(forward, toOther) < 0.7f)
         {
@@ -39,7 +39,7 @@ public class MeleeAttackDecision : Decision
     private bool IsCloseToPlayer(EnemyStateController controller)
     {
 
-        float sqrDistanceToPlayer = (controller.playerTransform.position - controller.transform.position).sqrMagnitude;
+        float sqrDistanceToPlayer = (Player.pTransform.position - controller.transform.position).sqrMagnitude;
 
         if (sqrDistanceToPlayer < Mathf.Pow(3f, 2))
         {

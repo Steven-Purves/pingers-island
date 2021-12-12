@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enermy_State_Methods : TrackPlayer
+public class Enermy_State_Methods : MonoBehaviour
 {
     public Enemy_Components enemy_Components;
     private bool visible;
@@ -15,7 +15,7 @@ public class Enermy_State_Methods : TrackPlayer
     {
         while (enemy_Components.enemyStateController.currentState == enemy_Components.chaseState)
         {
-            enemy_Components.navMeshAgent.SetDestination(enemy_Components.playerTransform.position);
+            enemy_Components.navMeshAgent.SetDestination(Player.pTransform.position);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -35,7 +35,7 @@ public class Enermy_State_Methods : TrackPlayer
 
     public void TurnTowardsPlayer()
     {
-        Vector3 targetDirection = enemy_Components.playerTransform.position - transform.position;
+        Vector3 targetDirection = Player.pTransform.position - transform.position;
         float singleStep = 10 * Time.deltaTime;
 
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_Components : TrackPlayer
+public class Enemy_Components : MonoBehaviour
 {
     [Space]
     public EnemyStateController enemyStateController;

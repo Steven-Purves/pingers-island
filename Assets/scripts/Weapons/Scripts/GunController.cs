@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using UnityEngine;
 using System;
 
 public enum GunType { REVOLVER, UZI, SHOTGUN, TOMMYGUN, GRENADE_LAUNCHER, BAZOOKA, SPACE_GUN }
@@ -38,7 +34,6 @@ public class GunController : MonoBehaviour
 		equippedGun.transform.parent = weaponHold;
 		equippedGun.Init(this);
 		equippedGunType = (GunType)gunToEquip;
-
 
 		if (equippedGunType == GunType.REVOLVER)
 		{

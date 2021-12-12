@@ -35,6 +35,24 @@ TextureImporter:
   - first:
       213: -2251308428495757296
     second: skully-sprites_5
+  - first:
+      213: -586324986867741103
+    second: skully-sprites_11
+  - first:
+      213: -6343669307207860880
+    second: skully-sprites_12
+  - first:
+      213: 3337099538310588468
+    second: skully-sprites_13
+  - first:
+      213: -7814431418062822577
+    second: skully-sprites_14
+  - first:
+      213: 6955997218154225618
+    second: skully-sprites_15
+  - first:
+      213: -2913722404360973778
+    second: skully-sprites_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -390,7 +408,7 @@ TextureImporter:
         width: 303
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 22, y: 30, z: 22, w: 30}
       outline: []
       physicsShape: []
@@ -398,6 +416,132 @@ TextureImporter:
       bones: []
       spriteID: fe4b87834c477de00800000000000000
       internalID: 1069451822633628911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_11
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 141
+        width: 172
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e00dae784fcd7f0800000000000000
+      internalID: -586324986867741103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_12
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 252
+        width: 149
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07db3531062c6f7a0800000000000000
+      internalID: -6343669307207860880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_13
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 279
+        width: 156
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4386f117952cf4e20800000000000000
+      internalID: 3337099538310588468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_14
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 47
+        width: 92
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43a6b427009d8390800000000000000
+      internalID: -7814431418062822577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_15
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 53
+        width: 195
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df10be8d9aa88060800000000000000
+      internalID: 6955997218154225618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skully-sprites_16
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 6
+        width: 359
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 80, y: 0, z: 85, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2297f929e06097d0800000000000000
+      internalID: -2913722404360973778
       vertices: []
       indices: 
       edges: []

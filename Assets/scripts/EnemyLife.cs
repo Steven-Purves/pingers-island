@@ -46,12 +46,30 @@ public class EnemyLife : Living
             lastHitDirection = Vector3.zero;
         }
 
-        CinemachineShake.Instance.ShakeCamera(2f, .3f);
-
         GamePeriodManager.OnAddScore?.Invoke(pointsOnDeath);
         OnEnemyDeath?.Invoke();
         
 
         enemy_Components.enermy_State_Methods.BlowUp(lastHitPoint, lastHitDirection, forceBlowBack, 20f);
+
+        switch (enemy_Components.currentEnemyData.enemyType)
+        {
+            case EnemyType.White:
+                RoundStatsPanel.instance.whiteVal++;
+                break;
+            case EnemyType.Green:
+                RoundStatsPanel.instance.greenVal++;
+                break;
+            case EnemyType.Red:
+                RoundStatsPanel.instance.redVal++;
+                break;
+            case EnemyType.Blue:
+                RoundStatsPanel.instance.blueVal++;
+                break;
+        }
+
+        if(!GamePeriodManager.isGameOver)
+            CinemachineShake.Instance.ShakeCamera(2f, .3f);
+
     }
 }

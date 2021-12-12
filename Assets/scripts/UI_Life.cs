@@ -19,6 +19,7 @@ public class UI_Life : MonoBehaviour
 
         Player.OnPlayerHit += PlayerHit;
         Player.OnPlayerEatChicken += PlayerEatsChicken;
+        Player.OnPlayerDied += PlayerDied;
     }
 
     private IEnumerator SpawnLives()
@@ -33,15 +34,27 @@ public class UI_Life : MonoBehaviour
         }
     }
 
+    public void PlayerDied()
+    {
+        while(health > 0)
+        {
+            PlayerHit();
+        }
+    }
+
     private void PlayerHit()
     {
         health--;
+
+        if (health < 0)
+            return;
+
         lifeItems[health].Changed(true);
     }
 
     private void PlayerEatsChicken()
     {
-        if (health + 1 >= maxHealth)
+        if (health == maxHealth)
             return;
 
         lifeItems[health].Changed(false);
@@ -52,5 +65,6 @@ public class UI_Life : MonoBehaviour
     {
         Player.OnPlayerHit -= PlayerHit;
         Player.OnPlayerEatChicken -= PlayerEatsChicken;
+        Player.OnPlayerDied -= PlayerDied;
     }
 }

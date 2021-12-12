@@ -1,12 +1,12 @@
-﻿
+﻿using System.Collections.Generic;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class MapGen : MonoBehaviour
 {
+    public static Action OnMapBuilt;
     public Transform weatherSpawnPoint;
     public NavMeshSurface surface;
 
@@ -29,14 +29,23 @@ public class MapGen : MonoBehaviour
     readonly string holderName = "Generated Map";
     Transform mapholder;
 
+    public GameObject snowFire;
+    public GameObject fire;
 
-    void Start()
+    private void Awake()
     {
-        GenerateMap();
+        GamePeriodManager.OnUpdateCurrentLevel += GenerateMap;
     }
 
-    public void GenerateMap()
+    private void OnDestroy()
     {
+        GamePeriodManager.OnUpdateCurrentLevel -= GenerateMap;
+    }
+
+    public void GenerateMap(int level)
+    {
+        mapSize = GetMapSize(level);
+
         DestroyOldMap();
         CreateCoordList();
         CreateGroundAndWater();
@@ -44,8 +53,33 @@ public class MapGen : MonoBehaviour
         surface.BuildNavMesh();
         SpawnFlowers();
         SpawnWeather();
-    }
 
+        OnMapBuilt?.Invoke();
+    }
+    
+    private Vector2 GetMapSize(int level)
+    {
+        int sizeX;
+        int sizeY;
+
+        if(level < 3)
+        {
+            sizeX = Random.Range(4, 4);
+            sizeY = Random.Range(4, 4);
+        }
+        else if (level < 6)
+        {
+            sizeX = Random.Range(4, 7);
+            sizeY = Random.Range(4, 7);
+        }
+        else
+        {
+            sizeX = Random.Range(4, 9);
+            sizeY = Random.Range(4, 9);
+        }
+
+        return new Vector2(sizeX, sizeY);
+    }
     private void SpawnFlowers()
     {
         for (int i = 0; i < grassAndFlowerDensity; i++)
@@ -128,6 +162,7 @@ public class MapGen : MonoBehaviour
        
         Instantiate(levelToBuild[levelTypeIndex].waterType, new Vector3(0, -3.5f, 0), Quaternion.identity,mapholder);
     }
+
     private int GetRotation(int x, int y)
     {
         int[] rotationArray = { 0, 90, 180, 270 };
@@ -160,7 +195,7 @@ public class MapGen : MonoBehaviour
         int floorType;
 
         if (y == 0)
-        {
+        { 
             floorType = x == 0 ? 2 : 1;
 
             if (floorType == 1 && x == mapSize.x - 1)
@@ -246,13 +281,37 @@ public class MapGen : MonoBehaviour
 
                 bool spawnObstacleType = UnityEngine.Random.value > 0.5f;
 
-                if (spawnObstacleType)
+                if(levelTypeIndex <= 2 && i == 0)
                 {
-                    CreateGroundLevelObstacle(newPosition);
+                    if (levelTypeIndex <= 0)
+                    {
+                        Vector3 randomMovePosition = new Vector3(newPosition.x, newPosition.y, newPosition.z + UnityEngine.Random.Range(-.8f, .8f));             
+
+                        GameObject newObstacle = Instantiate(snowFire, randomMovePosition, Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
+
+                        newObstacle.layer = 9;
+                        newObstacle.transform.parent = mapholder;
+                    }
+                    else
+                    {
+                        Vector3 randomMovePosition = new Vector3(newPosition.x, newPosition.y, newPosition.z + UnityEngine.Random.Range(-.8f, .8f));
+
+                        GameObject newObstacle = Instantiate(fire, randomMovePosition, Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
+
+                        newObstacle.layer = 9;
+                        newObstacle.transform.parent = mapholder;
+                    }
                 }
                 else
                 {
-                    CreateHighLevelObstacle(newPosition);
+                    if (spawnObstacleType)
+                    {
+                        CreateGroundLevelObstacle(newPosition);
+                    }
+                    else
+                    {
+                        CreateHighLevelObstacle(newPosition);
+                    }
                 }
                
                 allOpenCoords.Remove(randomCoord);
@@ -264,6 +323,7 @@ public class MapGen : MonoBehaviour
                 currentObstacleCount--;
             }
         }
+
         shuffledOpenCoords = new Queue<Coord>(ShuffleArray.ShuffleThisArray(allOpenCoords.ToArray()));
     }
 

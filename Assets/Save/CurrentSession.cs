@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurrentSession : MonoBehaviour
+public class CurrentSession
 {
-    public int hightScore = 0;
+    public int highScore = 0;
 }

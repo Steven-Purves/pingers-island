@@ -16,10 +16,12 @@ public class Menu : MonoBehaviour {
 
  	public int[] screenWidths;
 
+	public SaveManagerSession saveSession;
+
 	private void Start()
 	{
+		saveSession.Save(0);
 
-		//PlayerPrefs.DeleteAll();
 		Cursor.visible = true;
 		activeScreenResIndex = PlayerPrefs.GetInt("screen res index");
 
@@ -43,7 +45,6 @@ public class Menu : MonoBehaviour {
 
 		fullScreen.isOn = isFullscreen;
 		SetFullScreen(isFullscreen);
-
 	}
 
 	int activeScreenResIndex;

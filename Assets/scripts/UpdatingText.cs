@@ -6,13 +6,8 @@ using UnityEngine;
 public class UpdatingText : MonoBehaviour
 {
     public TMP_Text loadingText;
-    private string add = ". ";
+    private readonly string add = ". ";
     public Highscores highscoresManager;
-    void Start()
-    {
-        highscoresManager.DownloadHighscores();
-        StartCoroutine(Loading());
-    }
          
     private IEnumerator Loading()
     {
@@ -30,5 +25,10 @@ public class UpdatingText : MonoBehaviour
                 loadingText.text = string.Empty;
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(Loading());
     }
 }

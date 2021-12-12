@@ -23,7 +23,6 @@ public class Enemy_Initialize : PoolObject
         enemyStateController.TransitionToState(enemy_Components.startState);
 
         SelectEnemyType();
-
         SetAnimatorController();
         ResetAttack();
         SetMaterials();
@@ -43,9 +42,33 @@ public class Enemy_Initialize : PoolObject
 
     private void SelectEnemyType()
     {
-        // add more
-        enemy_Components.currentEnemyData = enemy_Components.enemy_Data[UnityEngine.Random.Range(0, enemy_Components.enemy_Data.Length)];
-        //enemy_Components.currentEnemyData = enemy_Components.enemy_Data[enemy_Components.enemy_Data.Length-1];
+        if (GamePeriodManager.currentGameData == null)
+        {
+            enemy_Components.currentEnemyData = enemy_Components.enemy_Data[UnityEngine.Random.Range(0, 0)];
+            return;
+        }
+
+        int currentLevel = GamePeriodManager.currentGameData.currentLevel;
+        int enemyRange = 0;
+
+        if (currentLevel < 3)
+        {
+            enemyRange = 1;
+        }
+        else if (currentLevel < 5)
+        {
+            enemyRange = 2;
+        }
+        else if (currentLevel < 6)
+        {
+            enemyRange = 3;
+        }
+        else if (currentLevel > 6)
+        {
+            enemyRange = 4;
+        }
+
+        enemy_Components.currentEnemyData = enemy_Components.enemy_Data[UnityEngine.Random.Range(0, enemyRange)];
     }
 
     private void ResetThrowingWeapons()

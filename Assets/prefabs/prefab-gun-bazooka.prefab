@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3996095803302140634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 969602358655334581}
   - component: {fileID: 2743588749591426833}
   - component: {fileID: 7108253345485708949}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: prefab-gun-bazooka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   infiniteAmmo: 0
   msBetweenShots: 300
   burstCount: 3
-  shotsLeft: 5
+  shotsLeft: 10
 --- !u!114 &2743588749591426833
 MonoBehaviour:
   m_ObjectHideFlags: 0

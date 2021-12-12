@@ -22,6 +22,7 @@ public class Projectile_Granade : PoolObject
         myRigidbody.AddTorque(transform.right * 100);
 
         Invoke(nameof(BlowUp), 1);
+
     }
     Vector3 CalculateLaunchVelocity(Vector3 target)
     {
@@ -47,7 +48,6 @@ public class Projectile_Granade : PoolObject
     private void BlowUp()
     {
         PoolManager.Instance.ReuseObject(Class_Pool_Manager_Create_The_Pool_Objects.Instance.particles[1], transform.position, Quaternion.identity);
-
         Collider[] colliders = Physics.OverlapSphere(transform.position, 4);
 
         foreach (Collider collider in colliders)
@@ -64,7 +64,6 @@ public class Projectile_Granade : PoolObject
                     Living livingBeing = collider.gameObject.GetComponent<Living>();
 
                     livingBeing.TakeDamage(DistanceCheck(livingBeing.transform.position), true);
-
                 }
             }
 
@@ -76,12 +75,15 @@ public class Projectile_Granade : PoolObject
             }
         }
 
+        if (!GamePeriodManager.isGameOver)
+            CinemachineShake.Instance.ShakeCamera(2f, .6f);
+
         gameObject.SetActive(false);
     }
 
     private int DistanceCheck(Vector3 colliderPosition)
     {
-        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
+        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 100 : blastDamage;
     }
 
     private void OnDisable()

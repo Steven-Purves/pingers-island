@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: boner-green-data
   m_EditorClassIdentifier: 
   enemyType: 1
-  startingHealth: 4
+  startingHealth: 6
   speed: 5
   pointsOnKill: 200
   material: {fileID: 2100000, guid: 7a5b171db62a57c44988a63a63ad5c26, type: 2}

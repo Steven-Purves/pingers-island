@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 5959712822805062108, guid: 0332b603932787a4fb4ea6f30fc5a2b1, type: 3}
   obsticles:
   - {fileID: 6252146317752075376, guid: 21e2db684d02c4e249eb57dbcab05b06, type: 3}
-  - {fileID: 318424674829801227, guid: a75bb23542c810f4db31647bc609b6b6, type: 3}
+  - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}
   - {fileID: 5250050194656580983, guid: 9aa96951ae4744917ae03e673a87a6b1, type: 3}
   - {fileID: 5162931699920567505, guid: 1aac424ea28606b419003a35ee7faf67, type: 3}
   - {fileID: 3529484205831168948, guid: 3db8e6a289ef8e14dbbb90d36e9d44c8, type: 3}

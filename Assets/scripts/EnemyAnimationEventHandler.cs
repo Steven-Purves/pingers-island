@@ -106,7 +106,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
     {
         PoolManager.Instance.ReuseObject(enemy_Components.redExpolsionParticle,transform.position, transform.rotation);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 4);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 5);
 
         foreach (Collider collider in colliders)
         {
@@ -131,7 +131,8 @@ public class EnemyAnimationEventHandler : MonoBehaviour
             }
         }
 
-        CinemachineShake.Instance.ShakeCamera(5f, 1f);
+        if(!GamePeriodManager.isGameOver)
+            CinemachineShake.Instance.ShakeCamera(5f, 1f);
 
         animationHasFinished = true;
         gameObject.SetActive(false);

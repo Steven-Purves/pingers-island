@@ -9,6 +9,11 @@ public class UI_BounceIn : MonoBehaviour
         transform.localScale = Vector3.zero;
     }
 
+    private void OnDisable()
+    {
+        transform.localScale = Vector3.zero;
+    }
+
     private void OnEnable()
     {
         transform.LeanScale(Vector3.one, 1f).setEaseOutBounce();

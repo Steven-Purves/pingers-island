@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoneProjectile : TrackPlayer
+public class BoneProjectile : MonoBehaviour
 {
     #pragma warning disable 649
     [SerializeField] public Rigidbody rb;
     public void Launch()
     {
-        Vector3 initialVelocityNeeded = CalculateLaunchVelocity(playerTransform.position);
+        Vector3 initialVelocityNeeded = CalculateLaunchVelocity(Player.pTransform.position);
 
         if (float.IsNaN(initialVelocityNeeded.x))
         {   

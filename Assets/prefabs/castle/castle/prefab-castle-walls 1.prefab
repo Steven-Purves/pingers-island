@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2138134620236100485}
   - component: {fileID: 3419713714112095884}
   - component: {fileID: 4012832130844074847}
+  - component: {fileID: 3131518469104185143}
   m_Layer: 0
   m_Name: prefab-castle-walls 1
   m_TagString: Untagged
@@ -110,3 +111,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0677166, y: 4.0272336, z: 4.0677176}
   m_Center: {x: 0.00000035762787, y: 2.000528, z: 0}
+--- !u!114 &3131518469104185143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029480852867048323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09625f318cf2b654f9fe413659f0556e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 1378363431306386626, guid: 81a6e558033004db9a0e6b6c875b38ea, type: 3}

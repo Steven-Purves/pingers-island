@@ -12,7 +12,7 @@ public class Enemy_FireBall : ReuseBone
 
         PoolManager.Instance.ReuseObject(particleExplosion, transform.position, Quaternion.identity);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 3);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 5);
 
         foreach (Collider collider in colliders)
         {
@@ -37,7 +37,9 @@ public class Enemy_FireBall : ReuseBone
             }
         }
 
-        CinemachineShake.Instance.ShakeCamera(2f, .6f);
+        if (!GamePeriodManager.isGameOver)
+            CinemachineShake.Instance.ShakeCamera(2f, .6f);
+
         gameObject.SetActive(false);
     }
 }

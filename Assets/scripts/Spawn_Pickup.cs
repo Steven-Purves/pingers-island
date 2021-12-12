@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Spawn_Pickup : MonoBehaviour
 {
-    public int level = 1;
-
     public GameObject[] pickups;
     private Pickup_Tier pickup_Tier;
 
@@ -19,17 +17,17 @@ public class Spawn_Pickup : MonoBehaviour
 
     private void Start()
     {
-        print("remeber to set level for pick ups!");
-       
-        if(level >= 20)
+        int level = GamePeriodManager.currentGameData.currentLevel;
+
+        if(level >= 5)
         {
             pickup_Tier = Pickup_Tier.FORTH;
         }
-        else if(level >= 15)
+        else if(level >= 4)
         {
             pickup_Tier = Pickup_Tier.THIRD;
         }
-        else if (level >= 10)
+        else if (level >= 2)
         {
             pickup_Tier = Pickup_Tier.SECOND;
         }
@@ -44,13 +42,13 @@ public class Spawn_Pickup : MonoBehaviour
         switch (pickup_Tier)
         {
             case Pickup_Tier.FIRST:
-                PoolManager.Instance.ReuseObject(pickups[Random.Range(0, 2)], transform.position, Quaternion.identity);
-                break;
-            case Pickup_Tier.SECOND:
                 PoolManager.Instance.ReuseObject(pickups[Random.Range(0, 4)], transform.position, Quaternion.identity);
                 break;
+            case Pickup_Tier.SECOND:
+                PoolManager.Instance.ReuseObject(pickups[Random.Range(0, pickups.Length)], transform.position, Quaternion.identity);
+                break;
             case Pickup_Tier.THIRD:
-                PoolManager.Instance.ReuseObject(pickups[Random.Range(0, 6)], transform.position, Quaternion.identity);
+                PoolManager.Instance.ReuseObject(pickups[Random.Range(0, pickups.Length)], transform.position, Quaternion.identity);
                 break;
             case Pickup_Tier.FORTH:
                 PoolManager.Instance.ReuseObject(pickups[Random.Range(0, pickups.Length)], transform.position, Quaternion.identity);

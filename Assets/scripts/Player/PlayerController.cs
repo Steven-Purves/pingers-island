@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAnimations = GetComponent<PlayerAnimations>();
 
-        Player.OnPlayerDied += IsLooking; 
+        Player.OnPlayerDied += IsLooking;
+        Spawner.OnPlayerWin += IsLooking;
     }
 
     private void OnDestroy()
     {
         Player.OnPlayerDied -= IsLooking;
+        Spawner.OnPlayerWin -= IsLooking;
     }
 
     private void IsLooking() 

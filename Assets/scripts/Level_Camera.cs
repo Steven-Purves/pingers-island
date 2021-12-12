@@ -14,6 +14,7 @@ public class Level_Camera : MonoBehaviour
     {
         vStartCam.gameObject.transform.position = new Vector3(Random.Range(-100, 100), Random.Range(0, 10), Random.Range(-100, 100));
         Player.OnPlayerDied += PlayerDied;
+        Spawner.OnPlayerWin += PlayerDied;
     }
 
     private void Start()
@@ -34,5 +35,6 @@ public class Level_Camera : MonoBehaviour
     private void OnDestroy()
     {
         Player.OnPlayerDied -= PlayerDied;
+        Spawner.OnPlayerWin -= PlayerDied;
     }
 }

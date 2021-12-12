@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boner-blue-data
   m_EditorClassIdentifier: 
   enemyType: 2
-  startingHealth: 5
-  speed: 3
+  startingHealth: 10
+  speed: 4
   pointsOnKill: 300
   material: {fileID: 2100000, guid: 9bbfc12fe7912fa4fad22abf836c10a8, type: 2}
   runtimeAnimatorController: {fileID: 9100000, guid: 0502806fb389d694db249cb8cf9861d9,

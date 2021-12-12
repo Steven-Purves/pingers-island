@@ -38,6 +38,6 @@ public class Living : MonoBehaviour, IDamageable
 
     public virtual void Splash()
     {
-        
+        TakeHit(100, true);
     }
 }

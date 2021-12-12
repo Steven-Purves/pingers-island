@@ -50,9 +50,13 @@ public class Missile_Projectile : Projectile
                 enemy_Reuse_Bone_Parts.myRigidbody.AddExplosionForce(200, transform.position, 4);
             }
         }
+
+        if (!GamePeriodManager.isGameOver)
+            CinemachineShake.Instance.ShakeCamera(2f, .6f);
     }
+
     private int DistanceCheck(Vector3 colliderPosition)
     {
-        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 1 : blastDamage;
+        return Vector3.Distance(transform.position, colliderPosition) > 2 ? 100 : blastDamage;
     }
 }

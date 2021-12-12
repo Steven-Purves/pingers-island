@@ -1,37 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CrosshairController : MonoBehaviour
 {
+    public static CrosshairController Instance;
+
+    public Camera viewCamera;
     public Transform crosshairs;
-    #pragma warning disable 649
-    GunController gunController;
-    [SerializeField] LayerMask targetMask;
-    [SerializeField] Camera viewCamera;
-    [SerializeField] Color highLight;
-    [SerializeField] Color original;
+
+    public MeshRenderer meshRenderer;
+
+    public GunController gunController;
+    public PlayerController playerController;
+
     private Vector3 point;
     private Ray ray;
-
-    private PlayerController playerController;
-
-    public static CrosshairController Instance;
 
     void Awake()
     {
         Instance = this;
-        gunController = GetComponent<GunController>();
-        Cursor.visible = false;
-        playerController = GetComponent<PlayerController>();
 
-        Player.OnPlayerDied += PlayerDied;
+        meshRenderer.enabled = false;
+     
+        Cursor.visible = false;
+
+        Player.OnPlayerDied += SetCursorVisible;
+        Spawner.OnPlayerWin += SetCursorVisible;
+
+        Invoke(nameof(SetCrossHair), 3);
+
+      
     }
 
-    private void PlayerDied()
+    private void SetCursorVisible()
     {
         Cursor.visible = true;
         crosshairs.gameObject.SetActive(false);
+    }
+
+    private void SetCrossHair()
+    {
+        meshRenderer.enabled = true;
     }
 
     void FixedUpdate()
@@ -39,10 +50,9 @@ public class CrosshairController : MonoBehaviour
         ray = viewCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.up * gunController.weaponHold.position.y);
 
-        if ((new Vector2(point.x, point.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 4)
+        if ((new Vector2(point.x, point.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 4 && !Cursor.visible)
         {
             gunController.Aim(point);
-            
         }
      
         if (groundPlane.Raycast(ray, out float rayDistance))
@@ -57,6 +67,7 @@ public class CrosshairController : MonoBehaviour
 
     private void OnDestroy()
     {
-        Player.OnPlayerDied -= PlayerDied;
+        Player.OnPlayerDied -= SetCursorVisible;
+        Spawner.OnPlayerWin -= SetCursorVisible;
     }
 }

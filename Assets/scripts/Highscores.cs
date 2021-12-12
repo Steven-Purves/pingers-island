@@ -6,15 +6,18 @@ using UnityEngine.Networking;
 
 public class Highscores : MonoBehaviour
 {
-
 	const string privateCode = "iKcAOz0IRkis2U0TwXc8rAV_KPurRbG0-AcOAvnZHnyw";
     const string publicCode = "6179ab7c8f40bba8b4fcdb91";
     const string webURL = "https://www.dreamlo.com/lb/";
 
     public GameObject updatingPage;
     public GameObject scoresDisplayPage;
+    public GameObject inputNamePage;
 
-	HighscoresDisplay highscoreDisplay;
+    public SaveManagerSession sessionSave;
+    public int sessionScore;
+
+    HighscoresDisplay highscoreDisplay;
 	public Highscore[] highscoresList;
 	static Highscores instance;
 
@@ -22,9 +25,14 @@ public class Highscores : MonoBehaviour
 	{
 		highscoreDisplay = GetComponent<HighscoresDisplay>();
 		instance = this;
-	}
+    }
 
-	public static void AddNewHighscore(string username, int score)
+    private void Start()
+    {
+        sessionScore = sessionSave.LoadScore();
+    }
+
+    public static void AddNewHighscore(string username, int score)
 	{
 		instance.StartCoroutine(instance.UploadNewHighscore(username, score));
 	}
@@ -74,14 +82,35 @@ public class Highscores : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
 
+                FormatHighscores(webRequest.downloadHandler.text);
+                highscoreDisplay.OnHighscoresDownloaded(highscoresList);
+
                 if (updatingPage.activeInHierarchy)
                 {
                     updatingPage.SetActive(false);
-                    scoresDisplayPage.SetActive(true);
+
+                    if(highscoresList.Length == 0 && sessionScore != 0)
+                    {
+                        inputNamePage.SetActive(true);
+                        sessionScore = 0;
+                        break;
+                    }
+
+                    int amount = highscoresList.Length < 10 ?  highscoresList.Length : 10;
+
+                    for (int i = 0; i < amount; i++)
+                    {
+                        if(highscoresList[i].score < sessionScore)
+                        {
+                            inputNamePage.SetActive(true);
+                            sessionScore = 0;
+                            break;
+                        }
+                    }
+                   
+                    scoresDisplayPage.SetActive(!inputNamePage.activeInHierarchy);
                 }
 
-                FormatHighscores(webRequest.downloadHandler.text);
-                highscoreDisplay.OnHighscoresDownloaded(highscoresList);
                 break;
         }
 
@@ -98,10 +127,8 @@ public class Highscores : MonoBehaviour
             string username = entryInfo[0];
             int score = int.Parse(entryInfo[1]);
             highscoresList[i] = new Highscore(username, score);
-       
         }
     }
-
 }
 
 public struct Highscore

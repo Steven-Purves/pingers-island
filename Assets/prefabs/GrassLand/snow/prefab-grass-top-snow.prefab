@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightToSpawnObstacle: 2.01
   obstaclesToSpawn:
-  - {fileID: -927199367670048503, guid: 0985df8a7af901b4ba7dafcd50ee7467, type: 3}
+  - {fileID: 5162931699920567505, guid: 1aac424ea28606b419003a35ee7faf67, type: 3}
   - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}
   - {fileID: -927199367670048503, guid: b575106bdad4b2c48aa97f86fe5c0e0e, type: 3}
   - {fileID: -927199367670048503, guid: b88996ca4d946f74e81351ba09e81f6f, type: 3}

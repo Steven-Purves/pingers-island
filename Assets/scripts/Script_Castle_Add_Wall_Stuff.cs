@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Script_Castle_Add_Wall_Stuff : MonoBehaviour
 {
@@ -11,8 +9,11 @@ public class Script_Castle_Add_Wall_Stuff : MonoBehaviour
     {
         float[] CastleWallStuffDirections = { 90, 180, 270 ,0};
 
-        GameObject objectToSpawn = Random.value > 0.5f ? torch : shield;
+        if (Random.value > 0.2f)
+        {
+            GameObject objectToSpawn = Random.value > 0.5f ? torch : shield;
 
-        Instantiate(objectToSpawn, transform.position, Quaternion.Euler(0, CastleWallStuffDirections[Random.Range(0, CastleWallStuffDirections.Length)], 0), transform);
+            Instantiate(objectToSpawn, transform.position, Quaternion.Euler(0, CastleWallStuffDirections[Random.Range(0, CastleWallStuffDirections.Length)], 0), transform);
+        }
     }
 }

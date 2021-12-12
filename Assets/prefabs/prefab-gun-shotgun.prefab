@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3996095803302140634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5734177706940575243}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 969602358655334581}
   - component: {fileID: 5808657916820316653}
   - component: {fileID: 9188326655400153084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: prefab-gun-shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   infiniteAmmo: 0
   msBetweenShots: 100
   burstCount: 3
-  shotsLeft: 12
+  shotsLeft: 24
 --- !u!114 &5808657916820316653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3882527608527673909}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201820727408428541}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

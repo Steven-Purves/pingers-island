@@ -10,7 +10,7 @@ public class Crate_Move : MonoBehaviour
     public float fallingAcceleration = 0.02f;
     public float floatingSpeed = 0.05f;
     public float fallHeight = 10;
-    public float startHeight = 20;
+    public float startHeight = 30;
     [Space]
     public float timeTillRespawn = 5;
     public Script_Pick_up_Balloon balloon;

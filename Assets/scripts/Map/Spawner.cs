@@ -1,19 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Spawner : TrackPlayer
+public class Spawner : SpawnerUtilities
 {
-    public GamePeriodManager gamePeriodManager;
+    public static Action OnPlayerWin;
     public GameObject enemy;
     public GameObject dirt;
     public Crate_Move crate;
 
-    float timeBetweenSpawns = 3;
+    public float timeBetweenSpawns = 5;
     public int startingEnemiesNumber;
 
-    int enemiesRemaningToSpawn;
+    public int enemiesRemaningToSpawn;
     float nextSpawnTime;
 
     float timeBetweenCampingChecks = 2;
@@ -21,27 +21,69 @@ public class Spawner : TrackPlayer
     float nextCampCheckTime;
     Vector3 campPositionOld;
     bool isCamping;
-
+    
     Vector3 _up = Vector3.up;
 
     private bool roundStarted;
+    private bool overrideLevel;
 
     public MapGen map;
 
-    void Start()
+    private void Awake()
     {
-        EnemyLife.OnEnemyDeath += EnemyDeath;
-
-        enemiesRemaningToSpawn = startingEnemiesNumber;
         nextCampCheckTime = timeBetweenCampingChecks + Time.time;
+        GamePeriodManager.OnUpdateEnemyCount += GetStartingNumber;
+        GamePeriodManager.OnUpdateCurrentLevel += OnOverride;
+        EnemyLife.OnEnemyDeath += EnemyDeath;
+    }
 
-        Invoke(nameof(SpawnCrate), 7);
-        Invoke(nameof(StartRound), 3);
+    private void OnDestroy()
+    {
+        GamePeriodManager.OnUpdateCurrentLevel -= OnOverride;
+        GamePeriodManager.OnUpdateEnemyCount -= GetStartingNumber;
+        EnemyLife.OnEnemyDeath -= EnemyDeath;
     }
 
     private void StartRound()
     {
         roundStarted = true;
+    }
+
+    private void OnOverride(int levelCount)
+    {
+       
+        if (levelCount < 5)
+        {
+            overrideLevel = true;
+            timeBetweenSpawns = 8; 
+
+            int newValue = GetSpawnNumber(levelCount);
+            startingEnemiesNumber = newValue;
+            enemiesRemaningToSpawn = newValue;
+
+            GamePeriodManager.currentGameData.enemiesCount = newValue;
+
+            Invoke(nameof(SpawnCrate), 2);
+            Invoke(nameof(StartRound), 4);
+        }
+    }
+
+    private void GetStartingNumber(int value)
+    { 
+        if (!overrideLevel)
+        {
+            timeBetweenSpawns = 4;
+
+            
+            startingEnemiesNumber = value;
+            enemiesRemaningToSpawn = startingEnemiesNumber;
+
+            int newValue = value + 10 +(value /4);
+            GamePeriodManager.currentGameData.enemiesCount = newValue;
+
+            Invoke(nameof(SpawnCrate), 7);
+            Invoke(nameof(StartRound), 4);
+        }
     }
 
     private void EnemyDeath()
@@ -50,7 +92,7 @@ public class Spawner : TrackPlayer
 
         if(startingEnemiesNumber <= 0)
         {
-            gamePeriodManager.LevelComplete();
+            OnPlayerWin?.Invoke();
         }
     }
 
@@ -65,8 +107,8 @@ public class Spawner : TrackPlayer
         {
             nextCampCheckTime = Time.time + timeBetweenCampingChecks;
 
-            isCamping = (Vector3.Distance(playerTransform.position, campPositionOld) < campThresholdDistance);
-            campPositionOld = playerTransform.position;
+            isCamping = (Vector3.Distance(Player.pTransform.position, campPositionOld) < campThresholdDistance);
+            campPositionOld = Player.pTransform.position;
         }
 
         if (enemiesRemaningToSpawn > 0 && Time.time > nextSpawnTime)
@@ -84,9 +126,9 @@ public class Spawner : TrackPlayer
 
         Vector3 spawnTile = map.GetRandomOpenTile().position;
        
-        if (isCamping && enemiesRemaningToSpawn < startingEnemiesNumber - 3)
+        if (isCamping)
         {
-            spawnTile = map.GetClosestTile(playerTransform.position);
+            spawnTile = map.GetClosestTile(Player.pTransform.position);
         }
 
         float spawnTimer = 0;
@@ -97,7 +139,7 @@ public class Spawner : TrackPlayer
             yield return null;
         }
 
-        PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f));
+        PoolManager.Instance.ReuseObject(enemy, spawnTile, Quaternion.Euler(0.0f, UnityEngine.Random.Range(0.0f, 360.0f), 0.0f));
         PoolManager.Instance.ReuseObject(dirt, spawnTile, Quaternion.identity);
     }
 
@@ -106,10 +148,4 @@ public class Spawner : TrackPlayer
         Crate_Move crate_Move = Instantiate(crate);
         crate_Move.MapGen = map;
     }
-
-    private void OnDestroy()
-    {
-        EnemyLife.OnEnemyDeath -= EnemyDeath;
-    }
-
 }

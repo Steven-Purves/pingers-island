@@ -143,7 +143,7 @@ MonoBehaviour:
   heightToSpawnObstacle: 1.2
   obstaclesToSpawn:
   - {fileID: 1907421237078121384, guid: cfd0ca290c3ff4591b5f38542af58927, type: 3}
-  - {fileID: -927199367670048503, guid: 0985df8a7af901b4ba7dafcd50ee7467, type: 3}
+  - {fileID: 5162931699920567505, guid: 1aac424ea28606b419003a35ee7faf67, type: 3}
   flagPole: {fileID: 4971686387833319149, guid: 928a425895bc0b84d9c1ea4362c1d28e,
     type: 3}
   castleWallObjects: []

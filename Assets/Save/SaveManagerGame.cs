@@ -5,7 +5,7 @@ using System.IO;
 
 public class SaveManagerGame : MonoBehaviour
 {
-    public static event Action<CurrentGameSaveObject> OnSendCurrentSavedData;
+    public static Action<CurrentGameSaveObject> OnSendCurrentSavedData;
     public static Action<CurrentGameSaveObject> OnSaveCurrentGame;
     public static Action<CurrentGameSaveObject> OnResetGame;
 

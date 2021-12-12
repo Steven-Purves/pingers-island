@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &244309125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471524824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7727,6 +7727,7 @@ GameObject:
   - component: {fileID: 5319765015304149556}
   - component: {fileID: 5319765015304149558}
   - component: {fileID: 5319765015304149557}
+  - component: {fileID: 5319765015304149559}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7747,7 +7748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1694601934}
+  highscores: {fileID: 5319765015304149558}
   userScore: 100
+  saveSession: {fileID: 5319765015304149559}
   inputPage: {fileID: 471524823}
   updatingPage: {fileID: 244309124}
 --- !u!114 &5319765015304149557
@@ -7787,6 +7790,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updatingPage: {fileID: 244309124}
   scoresDisplayPage: {fileID: 5319765014993467035}
+  inputNamePage: {fileID: 471524823}
+  sessionSave: {fileID: 5319765015304149559}
+  sessionScore: 1077
+--- !u!114 &5319765015304149559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319765015304149555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd033296f99854643bfd59158b1e0377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &5319765015304149564
 Canvas:
   m_ObjectHideFlags: 0

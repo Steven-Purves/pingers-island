@@ -7,7 +7,7 @@ public class SaveManagerSession : MonoBehaviour
 {
     private string saveSessionPath;
 
-    void Start()
+    void Awake()
     {
         saveSessionPath = Application.persistentDataPath + "currentSession.txt";
     }
@@ -15,7 +15,7 @@ public class SaveManagerSession : MonoBehaviour
     public void Save(int dataToSave)
     {
         CurrentSession thisSession = new CurrentSession();
-        thisSession.hightScore = dataToSave;
+        thisSession.highScore = dataToSave;
 
         string json = JsonUtility.ToJson(thisSession);
 
@@ -29,10 +29,9 @@ public class SaveManagerSession : MonoBehaviour
             string loadedString = File.ReadAllText(saveSessionPath);
             CurrentSession currentSession = JsonUtility.FromJson<CurrentSession>(loadedString);
 
-            return currentSession.hightScore;
+            return currentSession.highScore;
         }
 
         return 0;
     }
-
 }
