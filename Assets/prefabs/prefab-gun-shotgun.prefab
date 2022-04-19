@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireMode: 2
   infiniteAmmo: 0
-  msBetweenShots: 100
+  msBetweenShots: 300
   burstCount: 3
   shotsLeft: 24
 --- !u!114 &5808657916820316653
@@ -183,8 +183,8 @@ MonoBehaviour:
   - {fileID: 5734177706940575243}
   - {fileID: 1201820727408428541}
   bullet: {fileID: 1582356418521026, guid: 12dc97a1aabd84daba2201f67ebb04d7, type: 3}
-  shootAudio: {fileID: 0}
-  reloadAudio: {fileID: 0}
+  shootAudio: {fileID: 8300000, guid: cb76b5cf6db511a4f8a5ce067f07f889, type: 3}
+  reloadAudio: {fileID: 8300000, guid: d2f20b31d32ad444db2a0efe0bd9af21, type: 3}
   offset: 7.5
 --- !u!114 &9188326655400153084
 MonoBehaviour:

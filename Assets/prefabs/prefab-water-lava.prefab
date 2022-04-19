@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdac1d44a8dac1e4a9910c8fe0bb21fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigSplash: {fileID: 1031463763033214611, guid: 9bda246969fbce7469af1612c2c6eca1,
+  bigSplash: {fileID: 1031463763033214611, guid: 11f99ca158a9a384a95e108ecdf52a4a,
     type: 3}
-  smallSplash: {fileID: 1031463763033214611, guid: c327c155bed352f4d9ea73defd9719fe,
+  smallSplash: {fileID: 1031463763033214611, guid: 441d1fcb109e75f4ba4fd2cf3dd04b36,
     type: 3}
+  splash: {fileID: 8300000, guid: b5a5b95ab2f22bd4d91a8f4b8171069a, type: 3}

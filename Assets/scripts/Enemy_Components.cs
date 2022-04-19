@@ -20,7 +20,10 @@ public class Enemy_Components : MonoBehaviour
     public Animator animator;
     public NavMeshAgent navMeshAgent;
     public GameObject boneInHand, fireballInHand, throwingBone, throwingFireball, greenGroundStompParticle, redExpolsionParticle, dirtParticle, hitPingersParticle, hitBonerParticle, deathParticle;
-
+    [Space]
+    public AudioClip digging;
+    public AudioClip swipe, blowUp, throwing, growl, throwingFireBall, groundSmash;
+    public AudioClip death;
     [Space]
     public BoxCollider[] handColliders;
     public TrailRenderer[] handTrails;

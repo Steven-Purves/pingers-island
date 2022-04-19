@@ -9,7 +9,7 @@ public class Enemy_FireBall : ReuseBone
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-
+        AudioManger.Instance.PlaySfx2D(hit);
         PoolManager.Instance.ReuseObject(particleExplosion, transform.position, Quaternion.identity);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, 5);

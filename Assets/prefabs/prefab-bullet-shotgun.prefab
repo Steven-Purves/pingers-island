@@ -100,6 +100,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   impact: {fileID: 5104486197619220598, guid: 241985bcca277f544b67b854e8d38bdb, type: 3}
+  damage: 1
+  thud: {fileID: 8300000, guid: 000e5b554b412014e99829bce855be8b, type: 3}
+  hitBoner: {fileID: 8300000, guid: 93971cca4dea8e74a9ad340ab950e94e, type: 3}
 --- !u!96 &96026010800197926
 TrailRenderer:
   serializedVersion: 2

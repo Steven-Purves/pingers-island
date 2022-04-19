@@ -147,8 +147,8 @@ MonoBehaviour:
   muzzel:
   - {fileID: 3996095803302140634}
   bullet: {fileID: 1582356418521026, guid: ca6c71e6fcbcce44b8ec839e90428f1c, type: 3}
-  shootAudio: {fileID: 0}
-  reloadAudio: {fileID: 0}
+  shootAudio: {fileID: 8300000, guid: 9703a49e9dd08e34cb23993808a86dcb, type: 3}
+  reloadAudio: {fileID: 8300000, guid: b62a0368ae4a948409367d75bf226ae1, type: 3}
   offset: 0
   lazerBeam: {fileID: 6682028875645907395, guid: 6105540da615ebd458e207b3e26b866a,
     type: 3}

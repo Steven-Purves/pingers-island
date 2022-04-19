@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyAnimationEventHandler : MonoBehaviour
 {
@@ -18,6 +15,11 @@ public class EnemyAnimationEventHandler : MonoBehaviour
     {
         int i = animationEvent.intParameter;
         bool isHitBoxEnabled = Convert.ToBoolean(animationEvent.stringParameter);
+
+        if (isHitBoxEnabled)
+        {
+            AudioManger.Instance.PlaySfx2D(enemy_Components.swipe);
+        }
 
         enemy_Components.handTrails[i].emitting = isHitBoxEnabled;
         enemy_Components.handColliders[i].enabled = isHitBoxEnabled;
@@ -43,6 +45,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, 3);
             CinemachineShake.Instance.ShakeCamera(2f, .6f);
+            AudioManger.Instance.PlaySfx2D(enemy_Components.groundSmash);
 
             foreach (Collider collider in colliders)
             {
@@ -62,7 +65,6 @@ public class EnemyAnimationEventHandler : MonoBehaviour
                     }
                     else
                     {
-                      
                         livingScript = livingScript ?? GetComponentInChildren<Living>();
 
                         if (livingScript != collider.gameObject.GetComponent<Living>())
@@ -87,9 +89,15 @@ public class EnemyAnimationEventHandler : MonoBehaviour
     {
         bool isEnabled = Convert.ToBoolean(animationEvent.stringParameter);
 
+        if (!isEnabled)
+        {
+            AudioManger.Instance.PlaySfx2D(enemy_Components.throwing);
+        }
+
         if(enemy_Components.currentEnemyData.enemyType == EnemyType.Blue)
         {
             enemy_Components.fireballInHand.SetActive(isEnabled);
+            AudioManger.Instance.PlaySfx2D(enemy_Components.throwingFireBall);
         }
         else
         {
@@ -105,7 +113,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
     public void BlowUpNow()
     {
         PoolManager.Instance.ReuseObject(enemy_Components.redExpolsionParticle,transform.position, transform.rotation);
-
+        AudioManger.Instance.PlaySfx2D(enemy_Components.blowUp);
         Collider[] colliders = Physics.OverlapSphere(transform.position, 5);
 
         foreach (Collider collider in colliders)

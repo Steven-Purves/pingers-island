@@ -50,11 +50,14 @@ MonoBehaviour:
   crateMeshRenderer: {fileID: 5003427350360455666}
   spawn_Pickup: {fileID: 962376643647414456}
   fallingAcceleration: 0.0002
-  floatingSpeed: 0.009
+  floatingSpeed: 3
   fallHeight: 1
   startHeight: 30
   timeTillRespawn: 30
   balloon: {fileID: 1955114351844392899}
+  pop: {fileID: 8300000, guid: 83cd398ae0be1b046a500cb905912d11, type: 3}
+  inflate: {fileID: 8300000, guid: b59f5e04b99cf4045a4895ce7b646891, type: 3}
+  breakBox: {fileID: 8300000, guid: f8b57bdc0cbb7e34897d0b94f704026e, type: 3}
 --- !u!114 &962376643647414456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +207,11 @@ PrefabInstance:
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7694940889818802599, guid: 9fd62706ef41a92478ecdb50d5bae238,
+        type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 8300000, guid: b59f5e04b99cf4045a4895ce7b646891, type: 3}
     - target: {fileID: 7694940889818802599, guid: 9fd62706ef41a92478ecdb50d5bae238,
         type: 3}
       propertyPath: fragmentParticleSystem

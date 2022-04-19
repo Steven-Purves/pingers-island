@@ -8,7 +8,11 @@ public class Enemy_Initialize : PoolObject
     EnemyStateController enemyStateController;
     Enemy_Components enemy_Components;
 
-    public override void OnObjReuse() => Initialize();
+    public override void OnObjReuse()
+    {
+        Initialize();
+        AudioManger.Instance.PlaySound(enemy_Components.digging, transform.position);
+    }
 
     public void Awake()
     {

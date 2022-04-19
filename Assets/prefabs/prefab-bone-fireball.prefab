@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8270475421519696711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758275737530686202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d9a59d27f135744bdd00225803e26e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEffect: {fileID: 5104486197619220598, guid: 241985bcca277f544b67b854e8d38bdb,
-    type: 3}
-  particleExplosion: {fileID: 1942621340449072677, guid: 7b63aa69277841946ba427e5a4e7e962,
-    type: 3}
 --- !u!1001 &249627208665658940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35,6 +19,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.872
       objectReference: {fileID: 0}
@@ -50,6 +39,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -62,16 +56,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3263743247174557397, guid: d286a0a67e31504499e20b72900dbbc0,
         type: 3}
@@ -111,6 +95,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 249627208665658940}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8270475421519696711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758275737530686202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d9a59d27f135744bdd00225803e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 5104486197619220598, guid: 241985bcca277f544b67b854e8d38bdb,
+    type: 3}
+  hit: {fileID: 8300000, guid: da2f4d6a7c6cc504fbfe715d01523d8b, type: 3}
+  particleExplosion: {fileID: 1942621340449072677, guid: 7b63aa69277841946ba427e5a4e7e962,
+    type: 3}
 --- !u!1001 &3844268560184772021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,6 +123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: particle-boner-fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
         type: 3}
@@ -140,6 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -151,16 +162,6 @@ PrefabInstance:
     - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4782494994751216593, guid: bbd7233f9dc295f43a8924860248bdad,

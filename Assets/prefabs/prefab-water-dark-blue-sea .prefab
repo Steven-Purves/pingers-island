@@ -112,3 +112,4 @@ MonoBehaviour:
     type: 3}
   smallSplash: {fileID: 1031463763033214611, guid: c327c155bed352f4d9ea73defd9719fe,
     type: 3}
+  splash: {fileID: 8300000, guid: a2a1c83c9f5ae7942b434f720b5612d3, type: 3}

@@ -241,6 +241,14 @@ MonoBehaviour:
     type: 3}
   deathParticle: {fileID: 8464584302062584799, guid: 4cf6cd767f5f2e549a0c7cf335e0c6c7,
     type: 3}
+  digging: {fileID: 8300000, guid: 9eabe7e4df1ce2d489c964f5e22b265c, type: 3}
+  swipe: {fileID: 8300000, guid: 0e55bdad84c30734783ecb4ef4eb90c9, type: 3}
+  blowUp: {fileID: 8300000, guid: da2f4d6a7c6cc504fbfe715d01523d8b, type: 3}
+  throwing: {fileID: 8300000, guid: 5121e2f92ee879e4b95b75598c8b7e5f, type: 3}
+  growl: {fileID: 8300000, guid: bbea9191e8e23f348bd9d3e7d38e4c77, type: 3}
+  throwingFireBall: {fileID: 8300000, guid: 1b180ac209e2c1447a9500ecfd9437aa, type: 3}
+  groundSmash: {fileID: 8300000, guid: 2210dc54a9402fa4d9baeff335e20f59, type: 3}
+  death: {fileID: 8300000, guid: f34d36da06611ec4695bf544cef54fd1, type: 3}
   handColliders:
   - {fileID: 5391788827599664422}
   - {fileID: 5391788827570434486}

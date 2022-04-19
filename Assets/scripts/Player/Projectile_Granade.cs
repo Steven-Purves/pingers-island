@@ -6,8 +6,13 @@ public class Projectile_Granade : PoolObject
 {
     public int blastDamage;
 
+    [Header("Effects")]
+    public AudioClip boom;
+
     private Rigidbody myRigidbody;
     private TrailRenderer trail;
+
+
     public void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -49,6 +54,8 @@ public class Projectile_Granade : PoolObject
     {
         PoolManager.Instance.ReuseObject(Class_Pool_Manager_Create_The_Pool_Objects.Instance.particles[1], transform.position, Quaternion.identity);
         Collider[] colliders = Physics.OverlapSphere(transform.position, 4);
+
+        AudioManger.Instance.PlaySfx2D(boom);
 
         foreach (Collider collider in colliders)
         {

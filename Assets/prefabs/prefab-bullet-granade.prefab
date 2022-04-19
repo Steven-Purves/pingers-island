@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastDamage: 100
+  boom: {fileID: 8300000, guid: da2f4d6a7c6cc504fbfe715d01523d8b, type: 3}
 --- !u!136 &7977191975781509430
 CapsuleCollider:
   m_ObjectHideFlags: 0

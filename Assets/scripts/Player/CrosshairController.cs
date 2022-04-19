@@ -9,7 +9,7 @@ public class CrosshairController : MonoBehaviour
 
     public Camera viewCamera;
     public Transform crosshairs;
-
+    public Texture2D cursorTex;
     public MeshRenderer meshRenderer;
 
     public GunController gunController;
@@ -30,13 +30,13 @@ public class CrosshairController : MonoBehaviour
         Spawner.OnPlayerWin += SetCursorVisible;
 
         Invoke(nameof(SetCrossHair), 3);
-
-      
     }
 
     private void SetCursorVisible()
     {
         Cursor.visible = true;
+        Cursor.SetCursor(cursorTex, Vector2.zero, CursorMode.ForceSoftware);
+
         crosshairs.gameObject.SetActive(false);
     }
 

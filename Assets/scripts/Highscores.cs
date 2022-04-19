@@ -13,6 +13,7 @@ public class Highscores : MonoBehaviour
     public GameObject updatingPage;
     public GameObject scoresDisplayPage;
     public GameObject inputNamePage;
+    public CanvasGroup canvasGroup;
 
     public SaveManagerSession sessionSave;
     public int sessionScore;
@@ -30,6 +31,7 @@ public class Highscores : MonoBehaviour
     private void Start()
     {
         sessionScore = sessionSave.LoadScore();
+        canvasGroup.LeanAlpha(1, 1);
     }
 
     public static void AddNewHighscore(string username, int score)
@@ -65,7 +67,6 @@ public class Highscores : MonoBehaviour
 
 	IEnumerator DownloadHighscoresFromDatabase()
 	{
-
         using UnityWebRequest webRequest = UnityWebRequest.Get(webURL + publicCode + "/pipe/");
         // Request and wait for the desired page.
         yield return webRequest.SendWebRequest();

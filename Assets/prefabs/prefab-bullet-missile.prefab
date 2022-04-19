@@ -208,4 +208,7 @@ MonoBehaviour:
     m_Bits: 1536
   impact: {fileID: 1942621340449072677, guid: 6caa1849f9763a043906db41a9972a58, type: 3}
   damage: 100
+  thud: {fileID: 8300000, guid: 2210dc54a9402fa4d9baeff335e20f59, type: 3}
+  hitBoner: {fileID: 8300000, guid: 93971cca4dea8e74a9ad340ab950e94e, type: 3}
+  boom: {fileID: 8300000, guid: cdf66c57b8acb9046baca5d37a9fac2e, type: 3}
   blastDamage: 5

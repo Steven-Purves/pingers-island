@@ -203,8 +203,8 @@ MonoBehaviour:
   muzzel:
   - {fileID: 3996095803302140634}
   bullet: {fileID: 1582356418521026, guid: 12dc97a1aabd84daba2201f67ebb04d7, type: 3}
-  shootAudio: {fileID: 0}
-  reloadAudio: {fileID: 0}
+  shootAudio: {fileID: 8300000, guid: 613c15571305a2740b9138586f3501d0, type: 3}
+  reloadAudio: {fileID: 8300000, guid: eee1f362690f34649a7b27a124d20b06, type: 3}
   offset: 0
 --- !u!1001 &5662013355021967933
 PrefabInstance:

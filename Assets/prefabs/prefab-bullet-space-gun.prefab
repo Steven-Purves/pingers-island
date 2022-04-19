@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582356418521026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -202,9 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5be8743ee7ce74aa92418c5728b378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 100
   hitMask:
     serializedVersion: 2
     m_Bits: 1536
   impact: {fileID: 7901488952980544089, guid: 5fa8bc643da030b4eb13e3b91e7d14ca, type: 3}
   damage: 5
+  thud: {fileID: 8300000, guid: 2210dc54a9402fa4d9baeff335e20f59, type: 3}
+  hitBoner: {fileID: 8300000, guid: 83073938d57e85e41b01a60ce484889b, type: 3}

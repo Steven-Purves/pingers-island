@@ -8,7 +8,7 @@ public class Crate_Move : MonoBehaviour
     public Spawn_Pickup spawn_Pickup;
     [Space]
     public float fallingAcceleration = 0.02f;
-    public float floatingSpeed = 0.05f;
+    public float floatingSpeed =2.3f;
     public float fallHeight = 10;
     public float startHeight = 30;
     [Space]
@@ -16,7 +16,7 @@ public class Crate_Move : MonoBehaviour
     public Script_Pick_up_Balloon balloon;
     public MapGen MapGen { set => mapGen = value; }
     MapGen mapGen;
-
+    public AudioClip pop, inflate, breakBox;
     float acceleration;
     float velocity;
 
@@ -25,11 +25,20 @@ public class Crate_Move : MonoBehaviour
     bool isGrounded;
     bool isBalloonPopped;
     bool gameOver;
+    bool isBalloonInflated;
+    bool playerDied;
 
     private void Start()
     {
         Player.OnPlayerDied += GameEnded;
+        Spawner.OnPlayerWin += PlayerDied;
+
         Init();
+    }
+
+    private void PlayerDied()
+    {
+        playerDied = true;
     }
 
     public void Init()
@@ -77,10 +86,26 @@ public class Crate_Move : MonoBehaviour
     {
         if (!isBalloonPopped)
         {
+            if(transform.position.y <= fallHeight + 8 && !isBalloonInflated)
+            {
+                if (!playerDied && !gameOver) 
+                {
+                    AudioManger.Instance.PlaySfx2D(inflate);
+                }
+
+                isBalloonInflated = true;
+            }
+
             if (transform.position.y <= fallHeight)
             {
+                if (!playerDied && !gameOver)
+                {
+                    AudioManger.Instance.PlaySfx2D(pop);
+                }
+
                 balloon.PopBalloon();
                 isBalloonPopped = true;
+                isBalloonInflated = false;
             }
         }
     }
@@ -90,7 +115,7 @@ public class Crate_Move : MonoBehaviour
         if (transform.position.y >= 0)
         {
             velocity = transform.position.y >= fallHeight ? velocity = floatingSpeed : velocity += acceleration;
-            transform.position = new Vector3(transform.position.x, transform.position.y - velocity, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - velocity * Time.deltaTime, transform.position.z);
         }
         else if (!isGrounded)
         {
@@ -101,15 +126,17 @@ public class Crate_Move : MonoBehaviour
 
     void HitGround()
     {
+        if (!playerDied && !gameOver)
+        {
+            AudioManger.Instance.PlaySfx2D(breakBox);
+        }
+
         spawn_Pickup.SpawnPickup();
-
         crateMeshRenderer.enabled = false;
-
         acceleration = 0;
         velocity = 0;
 
         PoolManager.Instance.ReuseObject(Class_Pool_Manager_Create_The_Pool_Objects.Instance.crateBits, transform.position, Quaternion.identity);
-
         Invoke(nameof(Init), timeTillRespawn);
     }
 }

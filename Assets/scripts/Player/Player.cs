@@ -15,6 +15,11 @@ public class Player : Living
     public Player_Particles player_Particles;
     public bool isVulnerable;
 
+    public AudioClip hit;
+    public AudioClip die;
+    public AudioClip eatChicken;
+
+    private bool drowned;
     private bool playerWin;
 
     private void Awake()
@@ -43,6 +48,11 @@ public class Player : Living
 
     public override void TakeDamage(int damage, bool notUsed)
     {
+        if(damage > 0)
+        {
+            AudioManger.Instance.PlaySfx2D(hit);
+        }
+
         if (isVulnerable)
         {
             OnPlayerHit?.Invoke();
@@ -58,6 +68,10 @@ public class Player : Living
     {
         if (!playerWin)
         {
+            if (!drowned)
+            {
+                AudioManger.Instance.PlaySfx2DWithDelay(die, .2f);
+            }
             OnPlayerDied?.Invoke();
             base.Die();
         }
@@ -65,6 +79,7 @@ public class Player : Living
 
     public void EatChicken()
     {
+        AudioManger.Instance.PlaySfx2D(eatChicken);
         player_Particles.heal_Particle.Play();
         OnPlayerEatChicken?.Invoke();
         base.TakeDamage(-1);
@@ -72,8 +87,8 @@ public class Player : Living
 
     public override void Splash()
     {
+        drowned = true;
         Invoke(nameof(Disappear), 0.5f);
-
         Die(false);
     }
 

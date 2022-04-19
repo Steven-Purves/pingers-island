@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : PoolObject {
 
@@ -11,6 +9,8 @@ public class Projectile : PoolObject {
     public int damage = 1;
 
 	TrailRenderer trail;
+	public AudioClip thud;
+	public AudioClip hitBoner;
 
 	float lifeTime = 5;
 	float timer;
@@ -57,23 +57,24 @@ public class Projectile : PoolObject {
 
         if (Physics.Raycast(ray, out RaycastHit hit, moveDistance + skinWidth, hitMask, QueryTriggerInteraction.Collide))
         {
-            Vector3 normal = hit.normal;
-
             OnHitObject(hit.collider, hit.point);
         }
     }
 
-	public virtual void OnHitObject (Collider c, Vector3 hitPoint)
+	public virtual void OnHitObject (Collider collider, Vector3 hitPoint)
 	{
-		IDamageable damagableObject = c.GetComponent<IDamageable>();
+		IDamageable damagableObject = collider.GetComponent<IDamageable>();
 
-		
 		if (damagableObject != null) {
 
 			damagableObject.TakeHit(damage,hitPoint,transform.forward);
-        }
+			AudioManger.Instance.PlaySfx2D(hitBoner);
+		}
+        else
+        {
+			AudioManger.Instance.PlaySfx2D(thud);
+		}
         
-
         PoolManager.Instance.ReuseObject(impact, hitPoint, transform.rotation);
 
 		gameObject.SetActive(false);

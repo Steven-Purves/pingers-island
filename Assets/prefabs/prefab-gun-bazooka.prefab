@@ -147,8 +147,8 @@ MonoBehaviour:
   muzzel:
   - {fileID: 3996095803302140634}
   bullet: {fileID: 1582356418521026, guid: ab3079faa4141a74daf453d3e3a1415d, type: 3}
-  shootAudio: {fileID: 0}
-  reloadAudio: {fileID: 0}
+  shootAudio: {fileID: 8300000, guid: ddafe2a6bbcb8ba4e9c9879fa050e1ff, type: 3}
+  reloadAudio: {fileID: 8300000, guid: d2f20b31d32ad444db2a0efe0bd9af21, type: 3}
   offset: 0
 --- !u!114 &7108253345485708949
 MonoBehaviour:

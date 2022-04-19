@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Missile_Projectile : Projectile
 {
+    public AudioClip boom;
     public int blastDamage; 
 
     public override void OnHitObject(Collider c, Vector3 hitPoint)
@@ -24,6 +25,8 @@ public class Missile_Projectile : Projectile
 
     private void Explode()
     {
+        AudioManger.Instance.PlaySfx2D(boom);
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, 4);
 
         foreach (Collider collider in colliders)

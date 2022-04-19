@@ -36,7 +36,6 @@ public class EnemyLife : Living
     public override void Die(bool enemyCausedDeath)
     {
         base.Die();
-
         int pointsOnDeath = enemy_Components.currentEnemyData.pointsOnKill;
 
         if (enemyCausedDeath)
@@ -46,10 +45,10 @@ public class EnemyLife : Living
             lastHitDirection = Vector3.zero;
         }
 
+        AudioManger.Instance.PlaySfx2D(enemy_Components.death);
         GamePeriodManager.OnAddScore?.Invoke(pointsOnDeath);
         OnEnemyDeath?.Invoke();
         
-
         enemy_Components.enermy_State_Methods.BlowUp(lastHitPoint, lastHitDirection, forceBlowBack, 20f);
 
         switch (enemy_Components.currentEnemyData.enemyType)

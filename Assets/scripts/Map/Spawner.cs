@@ -73,8 +73,6 @@ public class Spawner : SpawnerUtilities
         if (!overrideLevel)
         {
             timeBetweenSpawns = 4;
-
-            
             startingEnemiesNumber = value;
             enemiesRemaningToSpawn = startingEnemiesNumber;
 

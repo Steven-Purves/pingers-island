@@ -7,8 +7,6 @@ public class BackgroundScroll : MonoBehaviour
 {
     public Sprite[] gradent;
     public Image backGround;
-
-
     public float scrollSpeed;
     public Image img;
 

@@ -13,9 +13,11 @@ public class ReadInputField : MonoBehaviour
 
     public GameObject inputPage;
     public GameObject updatingPage;
-
+    public Texture2D cursorTex;
     public void Start()
     {
+        Cursor.visible = true;
+        Cursor.SetCursor(cursorTex, Vector2.zero, CursorMode.ForceSoftware);
         StartCoroutine(Focus());
         userScore = saveSession.LoadScore();
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ReuseBone : PoolObject
 {
     public GameObject hitEffect;
+    public AudioClip hit;
+
     BoneProjectile boneProjectile;
     bool hitSomething;
 
@@ -22,11 +24,10 @@ public class ReuseBone : PoolObject
             if (!hitSomething)
             {
                 collision.gameObject.GetComponent<Living>().TakeDamage(1, true);
-
                 PoolManager.Instance.ReuseObject(hitEffect, transform.position, Quaternion.identity);
             }
         }
-
+        AudioManger.Instance.PlaySound(hit,transform.position);
         hitSomething = true;
     }
 

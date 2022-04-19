@@ -11,7 +11,7 @@ public class Digging : Actions
     }
 
     public override void StartState(EnemyStateController controller)
-    {   
+    {
         controller.enemy_Components.navMeshAgent.speed = 0;
     }
 

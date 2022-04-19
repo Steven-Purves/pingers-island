@@ -65,7 +65,7 @@ public class Gun : MonoBehaviour
             {
                 if (shotsRemainingInBurst == 0)
                 {
-                    gun_Fire.Reload();
+                    //gun_Fire.Reload();
                     return;
                 }
 
